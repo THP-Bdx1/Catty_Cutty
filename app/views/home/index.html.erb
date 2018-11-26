@@ -14,121 +14,20 @@
     <div class="products-catagories-area clearfix">
         <div class="amado-pro-catagory clearfix">
 
+            <%Item.all.each do |item|%>
             <!-- Single Catagory -->
             <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="https://i.gifer.com/VRwE.gif" alt="">
+                <a href="/product/<%=item.id%>">
+                    <img src="<%=item.image_url%>" alt="product image">
                     <!-- Hover Content -->
                     <div class="hover-content">
                         <div class="line"></div>
-                        <p>From $180</p>
-                        <h4>Modern Chair</h4>
+                        <p>From <%=item.price%>$</p>
+                        <h4><%=item.title%></h4>
                     </div>
                 </a>
             </div>
+            <%end%>
 
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="http://www.laboiteverte.fr/wp-content/uploads/2016/09/corps-gif-01.gif" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $180</p>
-                        <h4>Minimalistic Plant Pot</h4>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="https://comic.systems/images/Fox/XMen-Apocalypse/XMen-Apocalypse-extra-4210" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $180</p>
-                        <h4>Modern Chair</h4>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="http://growld.com/wp-content/uploads/2014/02/pixel-doge.gif" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $180</p>
-                        <h4>Night Stand</h4>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="http://bribriange49.b.r.pic.centerblog.net/0134525e.GIF" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $18</p>
-                        <h4>Plant Pot</h4>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="https://static1.squarespace.com/static/565f34f5e4b06736c02fdda6/565f4a0de4b0b002ffd17cb0/573ae7fca3360c8a5ac88cd3/1463478273693/vahinee3.gif?format=500w" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $320</p>
-                        <h4>Small Table</h4>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="http://galeriedesartistes.g.a.pic.centerblog.net/e61ca5b0.gif" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $318</p>
-                        <h4>Metallic Chair</h4>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="https://data.whicdn.com/images/78843063/original.gif" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $318</p>
-                        <h4>Modern Rocking Chair</h4>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Catagory -->
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <img src="http://img.over-blog-kiwi.com/0/82/53/64/20161018/ob_4c40fa_tumblr-o3p9ktt0ix1qc2hrjo1-500.gif" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From $318</p>
-                        <h4>Home Deco</h4>
-                    </div>
-                </a>
-            </div>
         </div>
     </div>

@@ -31,6 +31,6 @@ image_arr = [
 i=0
 
 20.times do
-  item = Item.create!(title: Faker::Job.title, description: Faker::StarWars.quote, price: Random.rand(1..20), image_url: image_arr[i])
+  item = Item.create!(title: Faker::Job.title, description: Faker::StarWars.quote, price: Random.rand(1..20)-0.01, image_url: image_arr[i])
   i+=1
 end

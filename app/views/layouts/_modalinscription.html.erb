@@ -15,6 +15,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "pseudo" %>
+  </div>
+
+  <div class="field", id = "hidden_field_image">
+    <%= f.label :imageuser %><br/>
+    <%= f.text_field :imageuser, autofocus: true, autocomplete: "https://rndr.juniqe-production.juniqe.com/media/catalog/product/cache/x800/18/22/18-22-203P-Gold-NM.jpg" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

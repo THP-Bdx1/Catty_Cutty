@@ -3,41 +3,33 @@
     <div class="nav-close">
         <i class="fa fa-close" aria-hidden="true"></i>
     </div>
-    <!-- Logo -->
-    <div class="logo">
-        <a href="index.html"><img src="https://rndr.juniqe-production.juniqe.com/media/catalog/product/cache/x800/18/22/18-22-203P-Gold-NM.jpg" alt=""></a>
-    </div>
+    
 <!-- User -->
     <ul> 
         <% if user_signed_in? %>
-            <li>Salut <%=current_user.email%>
+            <li><div class="logo"><a href="/"><img src="<%=current_user.imageuser%>" alt=""></a></div></li>
+            <li>Salut  <%=current_user.nickname%>
             <li> <%= link_to "Profil", edit_user_registration_path %> </li>
             <li> <%= link_to "Déconnection", destroy_user_session_path, method: :delete %> </li>
         <% else %>
             <li><button class="modal-inscription">Inscription</button></li>
-            <li><button class="modal-connection">Connection</button></li>
+            <li><button class="modal-connection">Connexion</button></li>
         <%end%>
     </ul>
 <!-- Amado Nav -->
     <nav class="amado-nav">
         <ul>
-            <li class="active"><a href="index.html">Accueil</a></li>
-            <li><a href="shop.html">Boutique</a></li>
-            <li><a href="product-details.html">Produits</a></li>
+            <li class="active"><a href="/">Accueil</a></li>
             <li><a href="cart.html">Panier</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="checkout.html">Order</a></li>
         </ul>
     </nav>
-    <!-- Button Group -->
-    <div class="amado-btn-group mt-30 mb-100">
-        <a href="#" class="btn amado-btn mb-15">Inscription</a>
-        <a href="#" class="btn amado-btn active">Deconnection</a>
-    </div>
+   
     <!-- Cart Menu -->
     <div class="cart-fav-search mb-100">
         <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-        <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favourite</a>
-        <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
+        <a href="#" class="fav-nav"><img src="./img/core-img/favorites.png" alt=""> Favourite</a>
+        <a href="#" class="search-nav"><img src="./img/core-img/search.png" alt=""> Search</a>
     </div>
     <!-- Social Button -->
     <div class="social-info d-flex justify-content-between">

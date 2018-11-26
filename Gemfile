@@ -64,8 +64,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-gem "jquery-rails", '~> 4.3.3'
+gem "jquery-rails", '~> 4.2.0'
 gem 'popper_js'
 gem 'jquery-ui-rails'
 gem 'faker'
+gem 'wow-rails'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+
 

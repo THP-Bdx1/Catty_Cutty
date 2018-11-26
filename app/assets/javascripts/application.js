@@ -15,11 +15,69 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require jquery-ui
+//= require wow
 //= require popper
 //= require turbolinks
 //= require activestorage
-//= require_tree .
 //= require bootstrap
+//= require bootstrap-sprockets
+//= require_tree .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
