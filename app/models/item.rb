@@ -4,4 +4,5 @@ class Item < ApplicationRecord
     validates :price, presence: true
     validates :image_url, presence: true
     has_and_belongs_to_many :carts
+    has_and_belongs_to_many :orders
 end
