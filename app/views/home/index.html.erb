@@ -1,105 +1,134 @@
-<h1>SITE EN CONSTRUCTION</h1>
-<img src="http://image.noelshack.com/fichiers/2018/48/1/1543225719-ras-la-croquette.png">
+<!-- Search Wrapper Area Start -->
 
-<div class="cart-table-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <div class="cart-title mt-50">
-                    <h2>nique bien ta mère vs share</h2>
-                </div>
-                <div class="cart-table clearfix">
-                            <table class="table table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="cart_product_img">
-                                            <a href="#"><img src="img/bg-img/cart1.jpg" alt="Product"></a>
-                                        </td>
-                                        <td class="cart_product_desc">
-                                            <h5>White Modern Chair</h5>
-                                        </td>
-                                        <td class="price">
-                                            <span>$130</span>
-                                        </td>
-                                        <td class="qty">
-                                            <div class="qty-btn d-flex">
-                                                <p>Qty</p>
-                                                <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart_product_img">
-                                            <a href="#"><img src="img/bg-img/cart2.jpg" alt="Product"></a>
-                                        </td>
-                                        <td class="cart_product_desc">
-                                            <h5>Minimal Plant Pot</h5>
-                                        </td>
-                                        <td class="price">
-                                            <span>$10</span>
-                                        </td>
-                                        <td class="qty">
-                                            <div class="qty-btn d-flex">
-                                                <p>Qty</p>
-                                                <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty2" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart_product_img">
-                                            <a href="#"><img src="img/bg-img/cart3.jpg" alt="Product"></a>
-                                        </td>
-                                        <td class="cart_product_desc">
-                                            <h5>Minimal Plant Pot</h5>
-                                        </td>
-                                        <td class="price">
-                                            <span>$10</span>
-                                        </td>
-                                        <td class="qty">
-                                            <div class="qty-btn d-flex">
-                                                <p>Qty</p>
-                                                <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty3" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+<!-- Search Wrapper Area End -->
+
+<!-- ##### Main Content Wrapper Start ##### -->
+
+    <!-- Header Area Start -->
+    <!-- Render des forms d'inscription modals -->
+    <%=render "layouts/modalconnection"%>
+    <%=render "layouts/modalinscription"%>
+    <!-- Header Area End -->
+
+    <!-- Product Catagories Area Start -->
+    <div class="products-catagories-area clearfix">
+        <div class="amado-pro-catagory clearfix">
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="https://i.gifer.com/VRwE.gif" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $180</p>
+                        <h4>Modern Chair</h4>
                     </div>
-                    <div class="col-12 col-lg-4">
-                        <div class="cart-summary">
-                            <h5>Cart Total</h5>
-                            <ul class="summary-table">
-                                <li><span>subtotal:</span> <span>$140.00</span></li>
-                                <li><span>delivery:</span> <span>Free</span></li>
-                                <li><span>total:</span> <span>$140.00</span></li>
-                            </ul>
-                            <div class="cart-btn mt-100">
-                                <a href="cart.html" class="btn amado-btn w-100">Checkout</a>
-                            </div>
-                        </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="http://www.laboiteverte.fr/wp-content/uploads/2016/09/corps-gif-01.gif" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $180</p>
+                        <h4>Minimalistic Plant Pot</h4>
                     </div>
-                </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="https://comic.systems/images/Fox/XMen-Apocalypse/XMen-Apocalypse-extra-4210" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $180</p>
+                        <h4>Modern Chair</h4>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="http://growld.com/wp-content/uploads/2014/02/pixel-doge.gif" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $180</p>
+                        <h4>Night Stand</h4>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="http://bribriange49.b.r.pic.centerblog.net/0134525e.GIF" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $18</p>
+                        <h4>Plant Pot</h4>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="https://static1.squarespace.com/static/565f34f5e4b06736c02fdda6/565f4a0de4b0b002ffd17cb0/573ae7fca3360c8a5ac88cd3/1463478273693/vahinee3.gif?format=500w" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $320</p>
+                        <h4>Small Table</h4>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="http://galeriedesartistes.g.a.pic.centerblog.net/e61ca5b0.gif" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $318</p>
+                        <h4>Metallic Chair</h4>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="https://data.whicdn.com/images/78843063/original.gif" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $318</p>
+                        <h4>Modern Rocking Chair</h4>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Single Catagory -->
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <img src="http://img.over-blog-kiwi.com/0/82/53/64/20161018/ob_4c40fa_tumblr-o3p9ktt0ix1qc2hrjo1-500.gif" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From $318</p>
+                        <h4>Home Deco</h4>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

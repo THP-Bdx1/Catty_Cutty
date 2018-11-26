@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,7 +11,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery2
+//= require jquery_ujs
 //= require rails-ujs
-//= require activestorage
+//= require jquery-ui
+//= require popper
 //= require turbolinks
+//= require activestorage
 //= require_tree .
+//= require bootstrap
+
+
+

@@ -10,6 +10,13 @@
   </head>
 
   <body>
+  <div class="main-content-wrapper d-flex clearfix">
+    <%= render "layouts/search-wrapper" %>
+    <%= render "layouts/mobile-nav" %>
+    <%= render "layouts/header" %>
     <%= yield %>
+  </div>
+    <%= render "layouts/footer"%>
+
   </body>
 </html>
