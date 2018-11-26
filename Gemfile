@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+#Dotenv
+gem 'dotenv-rails', groups: [:development, :test]
+#Mailjet
+gem 'mailjet'
 #Gem Devise to handle user informations and sessions
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

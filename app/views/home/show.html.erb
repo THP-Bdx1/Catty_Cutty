@@ -60,28 +60,14 @@
 
                     <!-- Add to Cart Form -->
                     <% if user_signed_in? %>
-                        <% if current_user.cart == nil%>
-                            <form class="cart clearfix" method="post">
-                                <input type="hidden" 
-                                    value="<%= form_authenticity_token() %>" 
-                                    name="authenticity_token"/>
-                                <button name="add" type="submit" class="btn amado-btn">Add to card</button>
-                            </form>
-                        <% elsif current_user.cart.items.include?(@item)%>
-                            <form class="cart clearfix" method="post">
-                                <input type="hidden" 
-                                    value="<%= form_authenticity_token() %>" 
-                                    name="authenticity_token"/>
+                        <form class="cart clearfix" action="/addtocart" method="post">
+                            <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
+                            <% if current_user.cart.items.include?(@item)%>
                                 <button name="remove" type="submit" class="btn amado-btn">Remove from cart</button>
-                            </form>
-                        <%else%>
-                            <form class="cart clearfix" method="post">
-                                <input type="hidden" 
-                                    value="<%= form_authenticity_token() %>" 
-                                    name="authenticity_token"/>
+                            <% else %>
                                 <button name="add" type="submit" class="btn amado-btn">Add to card</button>
-                            </form>
-                        <%end%>
+                            <% end %>
+                        </form>
                     <%end%>
                 </div>
             </div>

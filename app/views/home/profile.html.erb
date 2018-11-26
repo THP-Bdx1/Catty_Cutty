@@ -1,0 +1,33 @@
+<ul>
+    <li><img src="<%=current_user.avatar%>"></li>
+    <li><%=current_user.nickname%></li>
+    <li><%=current_user.email%></li>
+    <%current_user.orders.each do |order|%>
+    <div class="cart-table clearfix">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%order.items.each do |item|%>
+                    <tr>
+                        <td class="cart_product_img">
+                            <a href="/product/<%=item.id%>"><img src="<%=item.image_url%>" alt="product image"></a>
+                            </td>
+                        <td class="cart_product_desc">
+                            <h5><%=item.title%></h5>
+                        </td>
+                        <td class="price">
+                            <span>$<%=item.price%></span>
+                        </td>
+                    </tr>
+                    <%end%>
+                </tbody>
+            </table>
+        </div>
+        <%end%>
+</ul>
