@@ -1,42 +1,44 @@
-  <div class="modal__header">
-    <h2>Inscription</h2>
-    <button class="js-close-modal1">X</button>
+<div class="modal1">
+  <div class="modal__header bg-warning d-flex justify-content-between">
+    <h2 class="mt-1 ml-2">Inscription</h2>
+      <button class="mr-2 close js-close-modal1">X</button>
   </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="field mt-1">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-1">
     <%= f.label :nickname %><br />
     <%= f.text_field :nickname, autofocus: true, autocomplete: "pseudo" %>
   </div>
 
-  <div class="field", id = "hidden_field_image">
-    <%= f.label :avatar %><br/>
+  <div class="field mt-1" , id="hidden_field_image">
+    <%= f.label :avatar %><br />
     <%= f.text_field :avatar, autofocus: true, autocomplete: "https://rndr.juniqe-production.juniqe.com/media/catalog/product/cache/x800/18/22/18-22-203P-Gold-NM.jpg" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-1">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(
+      <%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-1">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
+  <div class="actions mt-2">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
+  <% end %>
 
 </div>

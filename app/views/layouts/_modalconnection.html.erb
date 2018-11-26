@@ -1,19 +1,29 @@
-
-
 <div class="modal2">
   <div class="modal__header bg-warning d-flex justify-content-between">
     <h2 class="mt-1 ml-2">Log in</h2>
-    <button class="mr-2 close js-close-modal2">X</button>
+      <button class="mr-2 close js-close-modal2">X</button>
+  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field mt-1">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field mt-1">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
   <% if devise_mapping.rememberable? -%>
-    <div class="field mt-1">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+  <div class="field mt-1">
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div>
   <% end -%>
 
-  <div class="actions mt-2">
-    <%= f.submit "Log in", class: "btn btn-sm btn-success"  %>
+  <div class="actions  mt-2">
+    <%= f.submit "Log in" %>
   </div>
-<% end %>
+  <% end %>
 
 </div>
