@@ -67,3 +67,5 @@ gem 'font-awesome-rails'
 gem "jquery-rails", '~> 4.3.3'
 gem 'popper_js'
 gem 'jquery-ui-rails'
+gem 'faker'
+
