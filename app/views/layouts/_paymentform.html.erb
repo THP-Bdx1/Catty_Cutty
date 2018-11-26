@@ -8,25 +8,19 @@
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
     data-locale="auto"
     data-currency="eur">
+        
+    Stripe.apiKey = "pk_test_HN4xZVR4GThqy1n2bFSnXx4F";
+
+    String token = request.getParameter("stripeToken");
+
+    Map<String, Object> params = new HashMap<>();
+    params.put("amount", 999);
+    params.put("currency", "eur");
+    params.put("description", "Example charge");
+    params.put("source", token);
+    params.put("capture", false);
+    Charge charge = Charge.create(params);
+
   </script>
 </form>
 
-document.getElementById("button").addEventListener("click", function() {
-  handler.open({
-    image: '/square-image.png',
-    name: 'Demo Site',
-    description: '2 widgets',
-    amount: 2000
-  });
-});
-
-document.getElementById("failbutton").addEventListener("click", function() {
-  fetch("/").then(function() {
-    handler.open({
-      image: '/square-image.png',
-      name: 'Demo Site',
-      description: '2 widgets',
-      amount: 2000
-    });
-  });
-});

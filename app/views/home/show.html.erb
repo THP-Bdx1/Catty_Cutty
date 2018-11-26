@@ -1,3 +1,4 @@
+
 <div class="single-product-area section-padding-100 clearfix">
     <div class="container-fluid">
 
@@ -33,7 +34,7 @@
                     <div class="product-meta-data">
                         <div class="line"></div>
                         <p class="product-price"><%= @item.price %>€</p>
-                        <a href="product-details.html">
+                        <a>
                             <h6><%= @item.title %></h6>
                         </a>
                         <!-- Ratings & Review -->
@@ -58,9 +59,30 @@
                     </div>
 
                     <!-- Add to Cart Form -->
-                    <form class="cart clearfix" method="post">
-                        <button onclick="myFunction()" class="btn amado-btn">Add to card</button>
-                    </form>
+                    <% if user_signed_in? %>
+                        <% if current_user.cart == nil%>
+                            <form class="cart clearfix" method="post">
+                                <input type="hidden" 
+                                    value="<%= form_authenticity_token() %>" 
+                                    name="authenticity_token"/>
+                                <button name="add" type="submit" class="btn amado-btn">Add to card</button>
+                            </form>
+                        <% elsif current_user.cart.items.include?(@item)%>
+                            <form class="cart clearfix" method="post">
+                                <input type="hidden" 
+                                    value="<%= form_authenticity_token() %>" 
+                                    name="authenticity_token"/>
+                                <button name="remove" type="submit" class="btn amado-btn">Remove from cart</button>
+                            </form>
+                        <%else%>
+                            <form class="cart clearfix" method="post">
+                                <input type="hidden" 
+                                    value="<%= form_authenticity_token() %>" 
+                                    name="authenticity_token"/>
+                                <button name="add" type="submit" class="btn amado-btn">Add to card</button>
+                            </form>
+                        <%end%>
+                    <%end%>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 <div class="modal1">
   <div class="modal__header">
     <h2>Inscription</h2>
-    <button class="js-close-modal">X</button>
+    <button class="js-close-modal1">X</button>
   </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -20,8 +20,8 @@
   </div>
 
   <div class="field", id = "hidden_field_image">
-    <%= f.label :imageuser %><br/>
-    <%= f.text_field :imageuser, autofocus: true, autocomplete: "https://rndr.juniqe-production.juniqe.com/media/catalog/product/cache/x800/18/22/18-22-203P-Gold-NM.jpg" %>
+    <%= f.label :avatar %><br/>
+    <%= f.text_field :avatar, autofocus: true, autocomplete: "https://rndr.juniqe-production.juniqe.com/media/catalog/product/cache/x800/18/22/18-22-203P-Gold-NM.jpg" %>
   </div>
 
   <div class="field">

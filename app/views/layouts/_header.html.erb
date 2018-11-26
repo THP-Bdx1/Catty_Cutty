@@ -7,10 +7,10 @@
 <!-- User -->
     <ul> 
         <% if user_signed_in? %>
-            <li><div class="logo"><a href="/"><img src="<%=current_user.imageuser%>" alt=""></a></div></li>
+            <li><div class="logo"><img src="<%=current_user.avatar%>"></div></li>
             <li>Salut  <%=current_user.nickname%>
             <li> <%= link_to "Profil", edit_user_registration_path %> </li>
-            <li> <%= link_to "Déconnection", destroy_user_session_path, method: :delete %> </li>
+            <li> <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %> </li>
         <% else %>
             <li><button class="modal-inscription">Inscription</button></li>
             <li><button class="modal-connection">Connexion</button></li>
@@ -27,9 +27,9 @@
    
     <!-- Cart Menu -->
     <div class="cart-fav-search mb-100">
-        <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-        <a href="#" class="fav-nav"><img src="./img/core-img/favorites.png" alt=""> Favourite</a>
-        <a href="#" class="search-nav"><img src="./img/core-img/search.png" alt=""> Search</a>
+        <a href="cart.html" class="cart-nav"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span>(0)</span></a>
+        <a href="#" class="fav-nav"><i class="fa fa-heart" aria-hidden="true"></i> Favoris</a>
+        <a href="#" class="search-nav"><i class="fa fa-search" aria-hidden="true"></i> Recherche</a>
     </div>
     <!-- Social Button -->
     <div class="social-info d-flex justify-content-between">
