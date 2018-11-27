@@ -14,18 +14,19 @@
 <img src="/img/cat-avatar.jpg" alt="edit" style= "border-radius: 50%; height: 100px; width: 100px;" />
         </li>
         <% end %>
-            <li>Salut  <%=current_user.nickname%>
-            <li> <%= link_to "Edit user infos", edit_user_registration_path %> </li>
-            <li> <%= link_to "Profil", profile_path %> </li>
-            <li> <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %> </li>
+            <li>Bonjour, <%=current_user.nickname%> !</li>
+            <li> <%= link_to "Votre Profil", profile_path, class: "text-dark" %> </li>
+            <li> <%= link_to "Editer vos infos", edit_user_registration_path, class: "text-dark" %> </li>
+            <li> <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "text-danger" %> </li>
             <%if current_user.admin == true %>
-                <li> <%= link_to "Admin Params", admin_path %> </li>
+                <li> <%= link_to "Administrateur", admin_path, class: "text-primary" %> </li>
             <%end%>
         <% else %>
             <li><button class="modal-inscription btn amado-btn">Inscription</button></li>
             <li class="pt-1"><button class="modal-connection btn amado-btn">Connexion</button></li>
         <%end%>
     </ul>
+
 <!-- Amado Nav -->
     <nav class="amado-nav">
         <ul>
