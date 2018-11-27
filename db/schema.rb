@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_190342) do
     t.bigint "user_id"
     t.bigint "item_id"
     t.bigint "order_id"
-    t.text "review"
+    t.text "content"
     t.integer "star"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
