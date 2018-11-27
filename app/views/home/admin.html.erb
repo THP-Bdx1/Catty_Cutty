@@ -3,6 +3,8 @@
 
 
 </br>
+</br>
+
 <img src = "http://www.cutcodedown.com/images/burgerIcon.png", class= "hamburger", id="hamburger-admin">
 <span>Display la liste des users, tu peux décider de les passer admin ou non</span>
 <div class="hamburger-admin-table">
@@ -31,39 +33,41 @@
 </div>
 
 </br>
+</br>
 
 <img src = "http://www.cutcodedown.com/images/burgerIcon.png", class= "hamburger", id="hamburger-order">
-<span>Display la liste des users, tu peux décider de les passer admin ou non</span>
+<span>Display la liste des commandes passées sur le site</span>
 <div class="hamburger-order-table">
     <table class="table">
-    <thead>
-        <tr>
-            <td>Pseudo</td>
-            <td>Email</td>
-            <td>Order Price</td>
-        </tr>
-    </thead>
+        <thead>
+            <tr>
+                <td>Pseudo</td>
+                <td>Email</td>
+                <td>Order Price</td>
+            </tr>
+        </thead>
         <tbody>
         <%@orders.each do |order|%>
-        <tr>
-            <td><%=order.user.nickname%></td>
-            <td><%=order.user.email%></td>
-            <%order_price = []%>
-            <%order.each do |items|%>
-                <% order_price << item.price %>
-            <%end%>
-            
-            <td><%=order_price.inject(0){|sum,x| sum + x }%></td>
-            
-        <%end%>
-        </tr>
+            <tr>
+                <td><%=order.user.nickname%></td>
+                <td><%=order.user.email%></td>
+                <%order_price = []%>
+                <%order.items.each do |item|%>
+                    <% order_price << item.price %>
+                <%end%>
+                
+                <td><%=order_price.inject(0){|sum,x| sum + x }%></td>
+                
+            </tr>
         <%end%>
         </tbody>
     </table>
 </div>
 
 </br>
+</br>
 <a href="/items/new" class="btn btn-danger">Ajouter un nouveau produit</a>
-<br>
+</br>
+</br>
 <a href="/items/" class="btn btn-warning">Voir la liste des produits</a>
 </div>
