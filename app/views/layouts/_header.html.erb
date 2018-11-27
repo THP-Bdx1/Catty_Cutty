@@ -9,9 +9,9 @@
         <% if user_signed_in? %>
         <% if current_user.profile_picture.attachment != nil %>
         <li>
-            <%= image_tag current_user.profile_picture %>
-            <% else %>
-                <img src="/img/cat-avatar.jpg" alt="edit" />
+            <%= image_tag current_user.profile_picture, class: "mb-2", style: "border-radius: 50%; height: 100px; width: 100px;" %>
+<% else %>
+<img src="/img/cat-avatar.jpg" alt="edit" style= "border-radius: 50%; height: 100px; width: 100px;" />
         </li>
         <% end %>
             <li>Salut  <%=current_user.nickname%>
