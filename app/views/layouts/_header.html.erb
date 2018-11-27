@@ -3,9 +3,9 @@
     <div class="nav-close">
         <i class="fa fa-close" aria-hidden="true"></i>
     </div>
-    
+
 <!-- User -->
-    <ul> 
+    <ul>
         <% if user_signed_in? %>
             <li><div class="logo"><img src="<%=current_user.avatar%>"></div></li>
             <li>Salut  <%=current_user.nickname%>
@@ -13,8 +13,8 @@
             <li> <%= link_to "Profil", profile_path %> </li>
             <li> <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %> </li>
         <% else %>
-            <li><button class="modal-inscription">Inscription</button></li>
-            <li><button class="modal-connection">Connexion</button></li>
+            <li><button class="modal-inscription btn amado-btn">Inscription</button></li>
+            <li class="pt-1"><button class="modal-connection btn amado-btn">Connexion</button></li>
         <%end%>
     </ul>
 <!-- Amado Nav -->
@@ -25,7 +25,7 @@
             <li><a href="checkout.html">Order</a></li>
         </ul>
     </nav>
-   
+
     <!-- Cart Menu -->
     <div class="cart-fav-search mb-100">
         <a href="/cart" class="cart-nav"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span><% if user_signed_in? %><% if current_user.cart == nil%>(0)<%else%>(<%=current_user.cart.items.length%>)<%end%><%else%>(0)<%end%></span></a>
