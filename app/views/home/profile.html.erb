@@ -1,5 +1,9 @@
 <ul>
-    <li><img src="<%=current_user.avatar%>"></li>
+<% if current_user.profile_picture.attachment != nil %>
+<li>
+    <%= image_tag current_user.profile_picture %>
+</li>
+<% end %>
     <li><%=current_user.nickname%></li>
     <li><%=current_user.email%></li>
     <%current_user.orders.each do |order|%>
@@ -26,8 +30,27 @@
                         </td>
                     </tr>
                     <%end%>
+                    
                 </tbody>
             </table>
         </div>
+        <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+              <label class="amount">
+                <span>Amount: $5.00</span>
+              </label>
+            </article>
+          
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="500"
+                    data-locale="auto"></script>
+          <% end %>
         <%end%>
 </ul>

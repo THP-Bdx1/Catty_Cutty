@@ -17,9 +17,14 @@
     <%= f.text_field :nickname, autofocus: true, autocomplete: "pseudo" %>
   </div>
 
+  <div class="field">
+    <%= f.label :profile_picture %><br />
+    <%= f.file_field :profile_picture, autofocus: true %>
+  </div>
+
   <div class="field mt-1" , id="hidden_field_image">
-    <%= f.label :avatar %><br />
-    <%= f.text_field :avatar, autofocus: true, value: "https://rndr.juniqe-production.juniqe.com/media/catalog/product/cache/x800/18/22/18-22-203P-Gold-NM.jpg" %>
+    <%= f.label :admin %><br />
+    <%= f.text_field :admin, autofocus: true, value: false %>
   </div>
 
   <div class="field mt-1">
@@ -42,3 +47,18 @@
   <% end %>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

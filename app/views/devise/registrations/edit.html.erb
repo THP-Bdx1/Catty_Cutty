@@ -14,8 +14,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :avatar %><br />
-    <%= f.text_field :avatar, autofocus: true, autocomplete: "url" %>
+    <%= f.label :profile_picture %><br />
+    <%= f.file_field :profile_picture, autofocus: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

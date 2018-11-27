@@ -46,4 +46,9 @@ class HomeController < ApplicationController
   def profile
   end
 
+  def admin
+    if current_user.admin == false
+      redirect_to "/"
+    end
+  end
 end
