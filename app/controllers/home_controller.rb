@@ -47,6 +47,7 @@ class HomeController < ApplicationController
 
   def admin
     @users = User.all
+    @orders = Order.all
     if current_user.admin == false
       redirect_to "/"
     end
