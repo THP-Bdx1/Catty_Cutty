@@ -472,8 +472,8 @@ img {
     }
     .header-area {
         @include trans-duration(500ms);
-        position: relative;
-        z-index : 1;
+        position: fixed;
+        z-index : 99;
         @include flex(0 0 320px);
         width           : 320px;
         max-width       : 320px;
@@ -1353,9 +1353,12 @@ img {
 
 .footer_area {
     position        : relative;
+    bottom : 0px;
+    right : 0px;
     z-index         : 1;
     background-color: #252525;
-    padding         : 80px 0;
+    margin-top : 40px;
+    padding         : 10px 0;
     .single_widget_area {
         .copywrite {
             font-size : 12px;

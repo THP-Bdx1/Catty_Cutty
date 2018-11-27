@@ -1,12 +1,21 @@
 <div class = "col-lg-9">
-<h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
 
+<h2 class="mt-4 mb-4"> Bienvenue sur la page administrateur, <%=current_user.nickname%> !</h2>
 
-</br>
-</br>
+<p class="text-right mt-4 mb-4">
+Cette page est strictement réservée aux utilisateurs disposant des droits d'administration du site.</p>
+<p class="text-left mt-4 mb-4">
+Il est recommandé pour les Administrateurs d'avoir un compte disposant d'un mot de passe de haute sécurité.</p>
+<p class="text-right mt-4 mb-4">
+Il est également recommandé de faire attention aux manipulations se déroulant sur cette page !</p>
+<p class="text-left mt-4 mb-4">
+Vous pouvez apercevoir en dessous une liste d'options disponibles afin de vous aider à gérer votre boutique en ligne.
+</p>
 
-<img src = "http://www.cutcodedown.com/images/burgerIcon.png", class= "hamburger", id="hamburger-admin">
-<span>Display la liste des users, tu peux décider de les passer admin ou non</span>
+<span class="font-italic">Afficher la liste des utilisateurs, et octroyer les droits d'administrateur à un utilisateur :</span> <br>
+<!-- <img src = "http://www.cutcodedown.com/images/burgerIcon.png", class= "hamburger", id="hamburger-admin"> -->
+<img style="height:28px" src="img/core-img/starecatnazi.gif", class= "hamburger", id="hamburger-admin">
+<span> < Liste des users</span>
 <div class="hamburger-admin-table">
     <table class="table">
     <thead>
@@ -20,7 +29,7 @@
         <%@users.each do |user|%>
         <tr>
             <td><%=user.nickname%></td>
-            <td><%=user.email%></td> 
+            <td><%=user.email%></td>
             <%if user.admin == false%>
                 <td class="badge badge-dark"><%= link_to "Passer admin", superpost_path(user_id: user.id), method: :post, class:"text-light"%></td>
             <%else%>
@@ -31,12 +40,13 @@
         </tbody>
     </table>
 </div>
+<br>
+<br>
 
-</br>
-</br>
-
-<img src = "http://www.cutcodedown.com/images/burgerIcon.png", class= "hamburger", id="hamburger-order">
-<span>Display la liste des commandes passées sur le site</span>
+<span class="font-italic">Consulter la liste des commandes passées sur le site :</span> <br>
+<!-- <img src = "http://www.cutcodedown.com/images/burgerIcon.png", class= "hamburger", id="hamburger-order"> -->
+<img style="height:28px" src="img/core-img/starecatnazi.gif", class= "hamburger", id="hamburger-order">
+<span> < Liste des Orders</span>
 <div class="hamburger-order-table">
     <table class="table">
         <thead>
@@ -55,9 +65,9 @@
                 <%order.items.each do |item|%>
                     <% order_price << item.price %>
                 <%end%>
-                
+
                 <td><%=order_price.inject(0){|sum,x| sum + x }%></td>
-                
+
             </tr>
         <%end%>
         </tbody>
@@ -66,8 +76,10 @@
 
 </br>
 </br>
-<a href="/items/new" class="btn btn-danger">Ajouter un nouveau produit</a>
+<span class="font-italic">Se rendre sur la page de création d'un nouveau produit :</span> <br>
+<a href="/items/new"><img style="height:28px" src="img/core-img/starecatnazi.gif"></a> < Nouveau produit
 </br>
 </br>
-<a href="/items/" class="btn btn-warning">Voir la liste des produits</a>
+<span class="font-italic">Se rendre sur la page de la liste des produits :</span> <br>
+<a href="/items/"><img style="height:28px" src="img/core-img/starecatnazi.gif"></a> < Liste des produits
 </div>
