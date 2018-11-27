@@ -11,8 +11,7 @@
 
     <!-- Product Catagories Area Start -->
     <div class="products-catagories-area clearfix">
-        <div class="amado-pro-catagory clearfix">
-
+        <div class="clearfix d-flex flex-row flex-wrap">
             <%Item.all.each do |item|%>
             <!-- Single Catagory -->
             <div class="single-products-catagory clearfix">
@@ -26,7 +25,7 @@
                     </div>
                 </a>
                 <% if user_signed_in? %>
-                    <form class="cart clearfix" action="/addtocart" method="post">
+                    <form class="cart clearfix pt-1 float-right" action="/addtocart" method="post">
                         <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
                         <input type="hidden" value="<%=item.id%>" name="id"/>
                         <% if current_user.cart == nil%>

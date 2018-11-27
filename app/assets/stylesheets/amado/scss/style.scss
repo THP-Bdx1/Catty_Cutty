@@ -1079,7 +1079,9 @@ img {
 .single-products-catagory {
     position: relative;
     z-index : 1;
-    width   : 33.33333%;
+    width   : 30.33333%;
+    height: 33.33333%;
+    margin: 1%;
     top     : 0;
     @media #{$breakpoint-lg} {
         width: 50%;
