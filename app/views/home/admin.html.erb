@@ -6,6 +6,266 @@
     <%@users.each do |user|%>
         <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
         <%if user.admin == false%>
+            <span class="badge badge-dark"><%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post, class:"text-light"%></span>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
+            <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
+        <%else%>
+            <p>Admin</p>
+        <%end%>
+    <%end%>
+</ul><h2> Bienvenue sur la page administrateur <%=current_user.nickname%> </h2>
+
+<p>Voici la liste des users, tu peux décider de les passer admin ou non</p>
+
+<ul>
+    <%@users.each do |user|%>
+        <li>Pseudo: <%=user.nickname%> - email: <%=user.email%></li> 
+        <%if user.admin == false%>
             <%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post%>
         <%else%>
             <p>Admin</p>

@@ -16,7 +16,11 @@
             <!-- Single Catagory -->
             <div class="single-products-catagory clearfix">
                 <a href="/product/<%=item.id%>">
+                <% if item.catimage.attachment != nil %>
+                    <%= image_tag item.catimage %>
+                        <% else %>
                     <img src="<%=item.image_url%>" alt="product image">
+                    <% end %>
                     <!-- Hover Content -->
                     <div class="hover-content">
                         <div class="line"></div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items, only: [:new, :create, :edit, :index]
 root "home#index"
 get "/cart", to: "home#cart"
 get "/profile", to: "home#profile"
