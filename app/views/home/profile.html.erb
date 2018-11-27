@@ -1,25 +1,25 @@
-<<<<<<< HEAD
-<div class="col-lg-9">
-  <div class="row">
-    <div class="col-lg-12">
-      <ul class="float-right m-4">
-<% if current_user.profile_picture.attachment != nil %>
-<li class="mb-2" style="height:150px; width:auto;">
-    <%= image_tag current_user.profile_picture %>
-</li>
-<% end %>
-<li>
-  <h2>
-    <%=current_user.nickname%>
-  </h2>
-</li>
-<li>
-  <h3>
-    <%=current_user.email%>
-  </h3>
-</li>
-</ul>
-</div>
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="float-right m-4">
+      <% if current_user.profile_picture.attachment != nil %>
+      <li class="mb-2" style="height:150px; width:auto;">
+        <%= image_tag current_user.profile_picture %>
+      <% else %>
+      <img src="/img/cat-avatar.jpg" alt="edit" />
+      </li>
+      <% end %>
+      <li>
+        <h2>
+          <%=current_user.nickname%>
+        </h2>
+      </li>
+      <li>
+        <h3>
+          <%=current_user.email%>
+        </h3>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="row">
@@ -27,50 +27,45 @@
     <h2>MY ORDERS</h2>
   </div>
 </div>
-    <%current_user.orders.each do |order|%>
-    <div class="cart-table clearfix">
-            <table class="table table-responsive">
-                <thead>
-                    <tr>
-<h3>
-  <%= order.created_at %>
-</h3>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%order.items.each do |item|%>
-                    <tr>
-                        <td class="cart_product_img">
-                            <a href="/product/<%=item.id%>"><img src="<%=item.image_url%>" alt="product image"></a>
-                            </td>
-                        <td class="cart_product_desc">
-                            <h5><%=item.title%></h5>
-                        </td>
-                        <td class="price">
-                            <span>$<%=item.price%></span>
-                        </td>
-                    </tr>
-                    <%end%>
-                    
-                </tbody>
-            </table>
-        </div>
-        <%= form_tag charges_path do %>
-            <article>
-              <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-              <% end %>
-            </article>
-          
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+<%current_user.orders.each do |order|%>
+  <div class="cart-table clearfix">
+    <table class="table table-responsive">
+      <thead>
+        <tr><h3><%= order.created_at %></h3>
+          <th></th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%order.items.each do |item|%>
+        <tr>
+          <td class="cart_product_img">
+            <a href="/product/<%=item.id%>"><img src="<%=item.image_url%>" alt="product image"></a>
+          </td>
+          <td class="cart_product_desc">
+            <h5><%=item.title%></h5>
+          </td>
+          <td class="price">
+            <span>$<%=item.price%></span>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<%end%>
+  <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+  <% end %>
+  </article>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                     data-description="A month's subscription"
                     data-amount="500"
                     data-locale="auto"></script>
-          <% end %>
-        <%end%>

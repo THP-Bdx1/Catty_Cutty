@@ -47,8 +47,16 @@ class HomeController < ApplicationController
   end
 
   def admin
+    @users = User.all
     if current_user.admin == false
       redirect_to "/"
+    end
+  end
+
+  def newadmin
+    if params[:user_id]
+      User.find(params[:user_id]).update(admin: true)
+      redirect_back(fallback_location: admin_path)
     end
   end
 end

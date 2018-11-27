@@ -60,11 +60,12 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :mailjet
   # Defaults to:
   # config.action_mailer.sendmail_settings = {
   #   location: '/usr/sbin/sendmail',
   #   arguments: '-i -t'
   # }
+
 
 end

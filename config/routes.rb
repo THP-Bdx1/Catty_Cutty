@@ -5,9 +5,8 @@ get "/profile", to: "home#profile"
 get "/admin", to: "home#admin"
 get "/product/:id", to: "home#show"
 post "/addtocart", to: "home#addtocart"
-post "/addtocart", to: "home#addtocart"
-post "/addtocart", to: "home#addtocart"
 post "/checkout", to: "home#checkout"
   devise_for :users
 resources :charges
+post "/newadmin", to: "home#newadmin"
 end

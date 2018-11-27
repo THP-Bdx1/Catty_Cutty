@@ -49,10 +49,10 @@
                             <li><span>total:</span> <span>$<%=@cartprice%></span></li>
                         </ul>
                         <div class="cart-btn mt-100">
-                        <form class="cart clearfix" action="/checkout" method="post">
-                        <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
-                        <button type="submit" class="btn amado-btn w-100">Checkout</button>
-                        </form>
+                            <form class="cart clearfix" action="/checkout" method="post">
+                                <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
+                                <button type="submit" class="btn amado-btn w-100">Checkout</button>
+                            </form>
                         </div>
                     </div>
                 </div>

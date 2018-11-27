@@ -10,6 +10,8 @@
         <% if current_user.profile_picture.attachment != nil %>
         <li>
             <%= image_tag current_user.profile_picture %>
+            <% else %>
+                <img src="/img/cat-avatar.jpg" alt="edit" />
         </li>
         <% end %>
             <li>Salut  <%=current_user.nickname%>

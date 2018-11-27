@@ -34,3 +34,7 @@ i=0
   item = Item.create!(title: Faker::Job.title, description: Faker::StarWars.quote, price: Random.rand(1..20)-0.01, image_url: image_arr[i])
   i+=1
 end
+
+1.times do
+user=User.create!(email: "thpbordeaux@gmail.com", password: "123456", nickname: "THPBdx", admin: true)
+end
