@@ -9,7 +9,7 @@
     <table class="table">
     <thead>
         <tr>
-            <td>Pseudo/email</td>
+            <td>Pseudo</td>
             <td>Email</td>
             <td>Statut</td>
         </tr>
@@ -38,22 +38,25 @@
     <table class="table">
     <thead>
         <tr>
-            <td>Pseudo/email</td>
+            <td>Pseudo</td>
             <td>Email</td>
-            <td>Statut</td>
+            <td>Order Price</td>
         </tr>
     </thead>
         <tbody>
-        <%@users.each do |user|%>
+        <%@orders.each do |order|%>
         <tr>
-            <td><%=user.nickname%></td>
-            <td><%=user.email%></td> 
-            <%if user.admin == false%>
-                <td class="badge badge-dark"><%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post, class:"text-light"%></td>
-            <%else%>
-                <td>Admin</td>
+            <td><%=order.user.nickname%></td>
+            <td><%=order.user.email%></td>
+            <%order_price = []%>
+            <%order.each do |items|%>
+                <% order_price << item.price %>
             <%end%>
-    </tr>
+            
+            <td><%=order_price.inject(0){|sum,x| sum + x }%></td>
+            
+        <%end%>
+        </tr>
         <%end%>
         </tbody>
     </table>

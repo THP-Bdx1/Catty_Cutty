@@ -39,7 +39,9 @@
     <!-- Cart Menu -->
     <div class="cart-fav-search mb-100">
         <a href="/cart" class="cart-nav"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span><% if user_signed_in? %><% if current_user.cart == nil%>(0)<%else%>(<%=current_user.cart.items.length%>)<%end%><%else%>(0)<%end%></span></a>
-        <a href="#" class="fav-nav"><i class="fa fa-heart" aria-hidden="true"></i> Favoris</a>
+        <% if user_signed_in? %>
+        <a href="/favoris" class="fav-nav"><i class="fa fa-heart" aria-hidden="true"></i> Favoris</a>
+        <% end %>
         <a href="#" class="search-nav"><i class="fa fa-search" aria-hidden="true"></i> Recherche</a>
     </div>
     <!-- Social Button -->

@@ -60,17 +60,13 @@
                                     </article>
                                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                                        data-description="A month's subscription"
-                                        data-amount="<%=@cartprice%>"
+                                        data-description="Achat de <%=@cartlength%> photo de chats"
+                                        data-amount="<%=@cartprice * 100%>"
                                         data-locale="auto"
                                         data-currency="eur">
                                     </script>
                                 <% end %>
                             </div>
-                            <form class="cart clearfix" action="/checkout" method="post">
-                                <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
-                                <button type="submit" class="btn amado-btn w-100">Checkout</button>
-                            </form>
                         </div>
                     </div>
                 </div>
