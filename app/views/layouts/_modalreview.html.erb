@@ -1,0 +1,41 @@
+<div class="modal3">
+  <div class="modal__header d-flex justify-content-between">
+    <h2 class="mt-1 ml-2 text-white">Log in</h2>
+      <button class="mr-2 close js-close-modal2">X</button>
+  </div>
+
+    <%= form_for(@review, url: superpost_path, method: :post) do |f| %>
+    
+        <div class="field mt-1", id="hidden_field_image">
+            <%= f.label :order_id %><br />
+            <%= f.text_area :order_id, autofocus: true, value: order.id %>
+        </div>
+
+        <div class="field mt-1", id="hidden_field_image">
+            <%= f.label :user_id %><br />
+            <%= f.text_area :user_id, autofocus: true, value: current_user.id %>
+        </div>
+
+
+        <div class="field mt-1", id="hidden_field_image">
+            <%= f.label :item_id %><br />
+            <%= f.text_area :item_id, autofocus: true, value: item.id %>
+        </div>
+
+        <div class="field mt-1">
+                <%= f.label :content %><br />
+                <%= f.text_area :content, autofocus: true, autocomplete: "Votre review" %>
+        </div>
+
+        <div class="field mt-1">
+                <%= f.label :star %><br />
+                <%= f.number_field :star, autofocus: true, autocomplete: "Notez ce produit sur 10" %>
+        </div>
+        
+        <div class="actions  mt-2">
+            <%= f.submit "Review" %>
+        </div>
+
+    <% end %> %>
+
+</div>
