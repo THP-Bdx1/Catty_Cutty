@@ -22,7 +22,7 @@
             <td><%=user.nickname%></td>
             <td><%=user.email%></td> 
             <%if user.admin == false%>
-                <td class="badge badge-dark"><%= link_to "Passer admin", newadmin_path(user_id: user.id), method: :post, class:"text-light"%></td>
+                <td class="badge badge-dark"><%= link_to "Passer admin", superpost_path(user_id: user.id), method: :post, class:"text-light"%></td>
             <%else%>
                 <td>Admin</td>
             <%end%>

@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.references :item, index: true
       t.references :order, index: true
       t.text :review
-      t.integer :stars
+      t.integer :star
       t.timestamps
     end
   end

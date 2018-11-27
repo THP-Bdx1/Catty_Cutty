@@ -10,5 +10,5 @@ post "/checkout", to: "home#checkout"
 get "/favoris", to: "home#favoris"
   devise_for :users
 resources :charges
-post "/newadmin", to: "home#newadmin"
+post "/superpost", to: "home#superpost"
 end

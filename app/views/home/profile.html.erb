@@ -35,6 +35,7 @@
               <td class="price">
                 <span>$<%=item.price%></span>
               </td>
+              <td><button class="modal-review btn amado-btn">Review</button></td>
               </tr>
           <%end%>
         </tbody>
@@ -42,3 +43,5 @@
     <%end%>
   </div>
 </div>
+
+<% link_to "Rate", superpost_path(order_id: order.id, item_id: item.id), method: :post, class:"text-light"%>

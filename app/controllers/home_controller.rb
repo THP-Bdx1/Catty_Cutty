@@ -13,6 +13,8 @@ class HomeController < ApplicationController
   end
 
   def addtocart
+    
+    
     if params[:add]
       current_user.cart.items << Item.find(params[:id])
       redirect_back(fallback_location: root_path)
@@ -37,7 +39,6 @@ class HomeController < ApplicationController
       @order.items << item
     end
     current_user.cart.items.clear
-
     UserMailer.mail_commande(@order, current_user.email).deliver_later
     redirect_to "/profile"
   end
@@ -53,10 +54,17 @@ class HomeController < ApplicationController
     end
   end
 
-  def newadmin
+  def superpost
     if params[:user_id]
       User.find(params[:user_id]).update(admin: true)
       redirect_back(fallback_location: admin_path)
+
+    elsif params[:order_id] && params[:item_id]
+      redirect_back(fallback_location: profile_path)
     end
+
   end
+
+
+
 end

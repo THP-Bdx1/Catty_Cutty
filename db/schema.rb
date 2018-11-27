@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_182922) do
+ActiveRecord::Schema.define(version: 2018_11_27_190342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_182922) do
     t.bigint "item_id"
     t.bigint "order_id"
     t.text "review"
-    t.integer "stars"
+    t.integer "star"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_reviews_on_item_id"
