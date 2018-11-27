@@ -35,7 +35,7 @@
               <td class="price">
                 <span>$<%=item.price%></span>
               </td>
-              <td><span><%=link_to "Rate", superpost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
+              <td><span><%=link_to "Rate", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
               </tr>
           <%end%>
         </tbody>

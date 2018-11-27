@@ -60,28 +60,17 @@ class HomeController < ApplicationController
   end
 
   def superpost
-    if params[:user_id]
       User.find(params[:user_id]).update(admin: true)
       redirect_back(fallback_location: admin_path)
-
-    elsif params[:review][:content]
-      if params[:review][:star] >= 0 && params[:review][:star] <= 10
-        Review.all.each do |current_review|
-          if current_review.order_id == params[:review][:order_id] && current_review.order_id == params[:review][:item_id]
-            current_review.update(user_id: params[:review][:user_id], order_id: params[:review][:order_id], item_id: params[:review][:item_id], content: params[:review][:content], star: params[:review][:star])
-            redirect_back(fallback_location: profile_path)
-          end
-        end
-        current_review.create!(user_id: params[:review][:user_id], order_id: params[:review][:order_id], item_id: params[:review][:item_id], content: params[:review][:content], star: params[:review][:star])      
-        redirect_back(fallback_location: profile_path)
-      
-      else 
-        redirect_to root_path
-      end
-    end
-
   end
 
+  def profilepost
+    @order_id = params[:order_id]
+    @item_id = params[:item_id]
+    redirect_to "/review/#{@order_id}/#{@item_id}"
+  end
 
+  def reviewpage
+  end
 
 end
