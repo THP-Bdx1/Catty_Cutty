@@ -3,6 +3,15 @@ class ChargesController < ApplicationController
   end
   
   def create
+
+    @order = Order.create!(user_id: current_user.id)
+    current_user.cart.items.each do |item|
+      @order.items << item
+    end
+    current_user.cart.items.clear
+
+    UserMailer.mail_commande(@order, current_user.email).deliver_later
+    
     # Amount in cents
     @amount = 500
   
