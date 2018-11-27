@@ -1,16 +1,40 @@
-<ul>
+<<<<<<< HEAD
+<div class="col-lg-9">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="float-right m-4">
 <% if current_user.profile_picture.attachment != nil %>
-<li>
+<li class="mb-2" style="height:150px; width:auto;">
     <%= image_tag current_user.profile_picture %>
 </li>
 <% end %>
-    <li><%=current_user.nickname%></li>
-    <li><%=current_user.email%></li>
+<li>
+  <h2>
+    <%=current_user.nickname%>
+  </h2>
+</li>
+<li>
+  <h3>
+    <%=current_user.email%>
+  </h3>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h2>MY ORDERS</h2>
+  </div>
+</div>
     <%current_user.orders.each do |order|%>
     <div class="cart-table clearfix">
             <table class="table table-responsive">
                 <thead>
                     <tr>
+<h3>
+  <%= order.created_at %>
+</h3>
                         <th></th>
                         <th>Name</th>
                         <th>Price</th>
@@ -41,9 +65,6 @@
                   <p><%= flash[:error] %></p>
                 </div>
               <% end %>
-              <label class="amount">
-                <span>Amount: $5.00</span>
-              </label>
             </article>
           
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -53,4 +74,3 @@
                     data-locale="auto"></script>
           <% end %>
         <%end%>
-</ul>
