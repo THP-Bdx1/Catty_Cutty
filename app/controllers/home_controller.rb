@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @items=Item.order('created_at DESC')
     if user_signed_in?
       if current_user.cart == nil
         Cart.create!(user_id: current_user.id)
@@ -15,11 +16,9 @@ class HomeController < ApplicationController
     if params[:add]
       current_user.cart.items << Item.find(params[:id])
       redirect_back(fallback_location: root_path)
-    elsif params[:remove]
+    elsif  params[:remove]
       current_user.cart.items.delete(Item.find(params[:id]))
       redirect_back(fallback_location: root_path)
-    else
-      redirect_to "/ERROR"
     end 
   end
 

@@ -1,4 +1,3 @@
-
 <div class="single-product-area section-padding-100 clearfix">
     <div class="container-fluid">
 
@@ -8,7 +7,9 @@
                     <ol class="breadcrumb mt-50">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Products</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><%= @item.title %></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <%= @item.title %>
+                        </li>
                     </ol>
                 </nav>
             </div>
@@ -20,9 +21,13 @@
                     <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
+                                <% if @item.catimage.attachment != nil %>
+                                <%= image_tag @item.catimage %>
+                                <% else %>
                                 <a class="gallery_img" href="<%= @item.image_url %>">
                                     <img class="d-block w-100" src="<%= @item.image_url %>" alt="First slide">
                                 </a>
+                                <% end %>
                             </div>
                         </div>
                     </div>
@@ -33,9 +38,12 @@
                     <!-- Product Meta Data -->
                     <div class="product-meta-data">
                         <div class="line"></div>
-                        <p class="product-price"><%= @item.price %>€</p>
+                        <p class="product-price">
+                            <%= @item.price %>€</p>
                         <a>
-                            <h6><%= @item.title %></h6>
+                            <h6>
+                                <%= @item.title %>
+                            </h6>
                         </a>
                         <!-- Ratings & Review -->
                         <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
@@ -55,16 +63,19 @@
                     </div>
 
                     <div class="short_overview my-5">
-                        <p><%= @item.description %></p>
+                        <p>
+                            <%= @item.description %>
+                        </p>
                     </div>
 
                     <!-- Add to Cart Form -->
                     <% if user_signed_in? %>
-                        <form class="cart clearfix" action="/addtocart" method="post">
-                            <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
-                            <% if current_user.cart.items.include?(@item)%>
-                                <button name="remove" type="submit" class="btn amado-btn">Remove from cart</button>
-                            <% else %>
-                                <button name="add" type="submit" class="btn amado-btn">Add to card</button>
-                            <% end %>
-                        </form>
+                    <form class="cart clearfix" action="/addtocart" method="post">
+                        <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token" />
+                        <% if current_user.cart.items.include?(@item)%>
+                        <button name="remove" type="submit" class="btn amado-btn">Remove from cart</button>
+                        <% else %>
+                        <button name="add" type="submit" class="btn amado-btn">Add to card</button>
+                        <% end %>
+                    </form>
+                    <% end %>

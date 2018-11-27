@@ -1,0 +1,19 @@
+.cropped img {
+        background-position-y: 50%;
+        background-position-x: 50%;
+        height : 350px;
+        width: auto;
+}
+
+.alignons {
+        display: flex;
+        flex-direction: row;
+}
+
+.alignons header {
+        align-items: flex-start;
+}
+
+.alignons .alignonsnous {
+        align-items: flex-end;
+}

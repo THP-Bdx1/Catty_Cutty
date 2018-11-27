@@ -12,10 +12,18 @@
   <body>
  <%=render "layouts/modalconnection"%>
  <%=render "layouts/modalinscription"%>
-  <div class="main-content-wrapper d-flex clearfix">
-    <%= render "layouts/search-wrapper" %>
+<%= render "layouts/search-wrapper" %>
+<br>
+<% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>">
+  <%= message %>
+</div>
+<% end %>
+  <div class="main-content-wrapper d-flex clearfix alignons">
+    
     <%= render "layouts/mobile-nav" %>
     <%= render "layouts/header" %>
+
     <%= yield %>
   </div>
     <%= render "layouts/footer"%>

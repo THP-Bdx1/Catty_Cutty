@@ -10,17 +10,19 @@
     <!-- Header Area End -->
 
     <!-- Product Catagories Area Start -->
-    <div class="products-catagories-area clearfix">
+    <div class="products-catagories-area clearfix col-lg-9 alignonsnous">
         <div class="clearfix d-flex flex-row flex-wrap">
-            <%Item.all.each do |item|%>
+            <%@items.each do |item|%>
             <!-- Single Catagory -->
             <div class="single-products-catagory clearfix">
                 <a href="/product/<%=item.id%>">
+                    <div class="cropped">
                 <% if item.catimage.attachment != nil %>
                     <%= image_tag item.catimage %>
                         <% else %>
                     <img src="<%=item.image_url%>" alt="product image">
                     <% end %>
+                    </div>
                     <!-- Hover Content -->
                     <div class="hover-content">
                         <div class="line"></div>

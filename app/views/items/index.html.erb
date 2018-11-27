@@ -1,1 +1,34 @@
-<h1>Liste des produits</h1>
+<table class="table">
+    <a href="/items/new" class="btn btn-danger">Ajouter un nouveau produit</a>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Titre</td>
+            <td>Description</td>
+            <td>Prix</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @items.each do |item| %>
+        <tr>
+            <td>
+                <%= item.id %>
+            </td>
+            <td>
+                <%= item.title %>
+            </td>
+            <td>
+                <%= item.description %>
+            </td>
+            <td>
+                <%= item.price %>$
+            </td>
+            <td>
+                <a href="/product/<%=item.id%>" class="btn btn-outline-dark">Voir le produit</a>
+                <a href="/items/<%=item.id%>/edit" class="btn btn-warning">Éditer</a>
+                <a href="<%=item_path(item.id)%>" class="btn btn-danger" data-method="DELETE">Supprimer</a>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

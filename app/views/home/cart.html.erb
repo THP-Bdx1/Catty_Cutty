@@ -49,6 +49,24 @@
                             <li><span>total:</span> <span>$<%=@cartprice%></span></li>
                         </ul>
                         <div class="cart-btn mt-100">
+                            <div class="m-3">
+                                <%= form_tag charges_path do %>
+                                    <article>
+                                        <% if flash[:error].present? %>
+                                            <div id="error_explanation">
+                                                <p><%= flash[:error] %></p>
+                                            </div>
+                                        <% end %>
+                                    </article>
+                                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                        data-description="A month's subscription"
+                                        data-amount="<%=@cartprice%>"
+                                        data-locale="auto"
+                                        data-currency="eur">
+                                    </script>
+                                <% end %>
+                            </div>
                             <form class="cart clearfix" action="/checkout" method="post">
                                 <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
                                 <button type="submit" class="btn amado-btn w-100">Checkout</button>
