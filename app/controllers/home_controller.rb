@@ -96,6 +96,20 @@ class HomeController < ApplicationController
 
   def reviewpage
     @review = Review.new
+    if current_user.orders.ids.include?(params["orderid"].to_i) 
+      if Order.find(params["orderid"].to_i).items.include?(Item.find(params["itemid"].to_i))
+        if Review.find_by(user_id: current_user.id, order_id: params["orderid"].to_i, item_id: params["itemid"].to_i)
+          redirect_to root_path
+          flash[:danger] = "Vous avez déjà noté ce produit"
+        end
+      else
+        redirect_to root_path
+        flash[:danger] = "Vous n'avez pas acheté cet item"
+      end
+    else 
+      redirect_to root_path
+      flash[:danger] = "Vous n'avez pas passé cette commande"
+    end 
   end
 
   def fav
