@@ -10,6 +10,8 @@ class HomeController < ApplicationController
   
   def show
       @item=Item.find(params[:id])
+      @favorites=Favorite.all
+      @favorite=Favorite.find_by(user_id: params[:user_id], item_id: params[:item_id])
   end
 
   def addtocart
@@ -110,6 +112,22 @@ class HomeController < ApplicationController
 
   def reviewpage
     @review = Review.new
+  end
+
+  def fav
+      @user = User.find(params[:user_id])
+      @item=Item.find(params[:item_id])
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    @favorite=Favorite.create!(user_id: current_user.id, item_id: params[:item_id])
+  end
+
+  def favoris
+    @favoris=Favorite.all
+    puts "L'item c'est ça MAGGLE #{params[:item_id]}"
+    @items=Item.all
   end
 
 end

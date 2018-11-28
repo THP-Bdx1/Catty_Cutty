@@ -57,6 +57,9 @@
                             <div class="review">
                                 <a href="#">Write A Review</a>
                             </div>
+                        <div class="review">
+                            <%= render "home/favorites" %>
+                        </div>
                         </div>
                         <!-- Avaiable -->
                         <p class="avaibility"><i class="fa fa-circle"></i> En Stock</p>
@@ -88,13 +91,14 @@
 </div>
 
 
-
-
-<div class="review">
-    <%Review.all.each do |review| %>
-        <%if params["id"].to_i == review.item_id %>
-            <p> <%=review.user.nickname%> a écrit à propos de ce produit : </p>
-            <p> <%=review.content%> - note: <%=review.star%>/10</p>
-        <%end%>
-    <%end%>
+                    <div class="review">
+                        <%Review.all.each do |review| %>
+                            <%if params["id"].to_i == review.item_id %>
+                                <p> <%=review.user.nickname%> a écrit à propos de ce produit : </p>
+                                <p> <%=review.content%> - note: <%=review.star%>/10</p>
+                            <%end%>
+                        <%end%>
+                    </div>
+        </div>
+    </div>
 </div>
