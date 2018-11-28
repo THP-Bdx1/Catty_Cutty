@@ -6,26 +6,26 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 image_arr = [
-  "https://kittenrescue.org/wp-content/uploads/2017/03/KittenRescue_KittenCareHandbook.jpg",
-  "https://www.thesprucepets.com/thmb/810a_HYIb2E8DxkedI6V-3gtkys=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/kitten-looking-at-camera-521981437-57d840213df78c583374be3b.jpg",
-  "http://image.noelshack.com/fichiers/2018/48/1/1543225719-ras-la-croquette.png",
-  "http://image.noelshack.com/fichiers/2018/48/1/1543232255-its-time-to-stop-posting.png",
-  "https://i.kym-cdn.com/photos/images/original/001/104/756/5bc.jpg",
+  "http://wfiles.brothersoft.com/s/staring_cat-800x600.jpg",
+  "http://wfiles.brothersoft.com/c/cat-wallpaper_195925-800x600.jpg",
+  "http://wfiles.brothersoft.com/c/cat-wallpaper_195981-800x600.jpg",
+  "https://www.chats-de-france.com/photo/chats/t_chat/chats-ragdoll-d25293f9-1e7c-0504-7126-28f44f1a72aa.jpg",
+  "https://cdn20.patchcdn.com/users/22906546/20180806/012649/styles/T800x600/public/processed_images/shutterstock_782211643-1533574759-3613.jpg",
   "https://i.kym-cdn.com/photos/images/newsfeed/001/069/986/bd5.jpg",
-  "https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif",
-  "https://i.pinimg.com/originals/fc/ea/9a/fcea9a5369ebbdca95dca1c0aa1e1a51.jpg",
-  "https://thumbs.gfycat.com/IdioticWatchfulArieltoucan-small.gif",
-  "https://media.giphy.com/media/zJ8ldRaGLnHTa/giphy.gif",
-  "https://i.pinimg.com/originals/76/70/36/7670360c4c619b9214bb719fb49e0076.jpg",
-  "https://media.giphy.com/media/2dnTHovkLt6Yo/giphy.gif",
-  "https://catmacros.files.wordpress.com/2011/01/coke_cat_freak.jpg",
-  "https://i0.wp.com/bayart.org/wp-content/uploads/2018/05/funny-cat-memes-images.jpg?fit=483%2C444&ssl=1",
-  "http://quotationsquotes.com/wp-content/uploads/2015/10/Top-30-Funny-cat-Picture-Quotes-joke-591x787.jpg",
-  "https://quotesnhumor.com/wp-content/uploads/2015/07/Top-30-Funny-Cat-Memes.jpg",
-  "https://i.ytimg.com/vi/2fb-g_V-UT4/hqdefault.jpg",
-  "https://educacentre.com/wp-content/uploads/2018/09/funny-cat-resume-red-dot.jpg",
-  "http://randomfunnycat.com/wp-content/uploads/2015/11/Top-30-Funny-Cat-Memes-Hilarious.jpg",
-  "https://i.kym-cdn.com/photos/images/newsfeed/000/437/747/b0d.jpg"
+  "http://www.thecatshoppedogstore.com/s/cc_images/cache_898504680.jpg?t=1490326069",
+  "http://www.monchatestroi.fr/wp-content/uploads/2016/03/Hector-le-chat-premi%C3%A8re-approche.jpg",
+  "https://thumbs-prod.si-cdn.com/uJ1BXxtghIVPeBzK5L1uWEXyS9g=/800x600/filters:no_upscale()/https://public-media.smithsonianmag.com/filer/d1/33/d133235a-688f-4faf-8166-a7532321c1db/felix-44.jpg",
+  "https://cdn.allwallpaper.in/wallpapers/800x600/4081/animals-cat-paws-cats-pets-tails-800x600-wallpaper.jpg",
+  "https://www.spa-montpellier.org/wp-content/uploads/2018/08/MAYA-82254.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY63JWpaayJHVAUg4bBNUn46kzNhbQ7Qt8KTJes_AerE45VAcryg",
+  "https://thumbs-prod.si-cdn.com/0s-cHLruwd4LUqAKRoNIGusc7xg=/800x600/filters:no_upscale()/https://public-media.smithsonianmag.com/filer/c9/00/c9006d5a-854c-4d68-91d3-d6e4c8195695/acoustic_kitty.jpg",
+  "https://allthatsinteresting.com/wordpress/wp-content/uploads/2012/08/ugly-cat-sphynx-2.jpg",
+  "https://www.spa-montpellier.org/wp-content/uploads/2018/07/OMALLEY-81847-2.jpg",
+  "https://pbs.twimg.com/media/DhGZlF5XcAEmbZm.jpg",
+  "http://www.thecatshoppedogstore.com/s/cc_images/cache_898504688.jpg?t=1490326069",
+  "http://s1.1zoom.me/b6045/911/Cats_Glance_Fear_Cute_Box_532229_800x600.jpg",
+  "https://www.wanimo.com/veterinaire/images/articles/chat/chat-neige.jpg",
+  "https://www.seriousfacts.com/wp-content/uploads/2017/05/calico-cat.jpg"
 ]
 
 i=0
@@ -37,4 +37,8 @@ end
 
 1.times do
 user=User.create!(email: "thpbordeaux@gmail.com", password: "123456", nickname: "THPBdx", admin: true)
+end
+
+1.times do
+user=User.create!(email: "nazicat@nazi.cat", password: "nazicat", nickname: "nazicat", admin: true)
 end

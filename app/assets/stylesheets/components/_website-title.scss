@@ -1,0 +1,19 @@
+.website-title {
+    margin-right: 30px;
+    text-align: right;
+    font-size: 64px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    color: #ff00db;
+}
+
+.title-pic {
+  height: 128px;
+  width: auto;
+}
+
+@media screen and (max-width:480px) {
+  .title-pic {
+    display: none;
+  }
+}
