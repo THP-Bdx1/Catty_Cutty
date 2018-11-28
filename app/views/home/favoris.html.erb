@@ -1,0 +1,15 @@
+<% @favoris.each do |favor| %>
+    <% if current_user.id == favor.user_id %>
+            <% @items.each do |item| %>
+                <% if favor.item_id == item.id %>
+                    <%= item.title %>
+                        <% if item.catimage.attachment != nil %>
+                        <%= image_tag @item.catimage %>
+                        <% else %>
+                        <%= image_tag item.image_url %>
+                        <% end %>
+                    <a href="/product/<%=item.id%>">
+                <% end %>
+            <% end %>
+    <% end %>
+<% end %>
