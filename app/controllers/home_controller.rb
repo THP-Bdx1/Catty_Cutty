@@ -35,7 +35,7 @@ class HomeController < ApplicationController
       @cartprice = c
     else
       redirect_back(fallback_location: root_path)
-      flash[:error] = "You must be logged in to access this section"
+      flash[:danger] = "You must be logged in to access this section"
     end
   end
   
@@ -73,33 +73,16 @@ class HomeController < ApplicationController
         @item_id = params[:review][:item_id].to_i
         @user_id = params[:review][:user_id].to_i
         if @star >= 1 && @star <= 10
-          if Review.all.length != 0
-            c = 1
-            Review.all.each do |current_review|
-              if current_review.order_id == @order_id && current_review.item_id == @item_id && current_review.user_id == @user_id
-                current_review.update(user_id: @user_id, order_id: @order_id, item_id: @item_id, content: params[:review][:content], star: @star)
-                redirect_to profile_path
-                flash[:error] = "Votre review a bien été modifiée!"
-
-              elsif c == Review.all.length && current_review.order_id != @order_id
-                Review.create!(user_id: @user_id, order_id: @order_id, item_id: @item_id, content: params[:review][:content], star: @star)      
-                redirect_to profile_path
-                flash[:error] = "Votre review a bien été prise en compte!"
-              end
-              c += 1
-            end
-          else 
-            Review.create!(user_id: @user_id, order_id: @order_id, item_id: @item_id, content: params[:review][:content], star: @star)      
-            redirect_to profile_path
-            flash[:error] = "Votre review a bien été prise en compte!"
-          end
+          Review.create!(user_id: @user_id, order_id: @order_id, item_id: @item_id, content: params[:review][:content], star: @star)      
+          redirect_to profile_path
+          flash[:sucess] = "Votre review a bien été prise en compte!"
         else
           redirect_to profile_path
-          flash[:error] = "Vous n'avez pas remplis les champs requis"
+          flash[:danger] = "Vous n'avez pas remplis les champs requis"
         end
       else
         redirect_to profile_path
-        flash[:error] = "Vous n'avez pas remplis les champs requis"
+        flash[:danger] = "Vous n'avez pas remplis les champs requis"
       end
     end
   end

@@ -35,14 +35,17 @@
               <td class="price">
                 <span>$<%=item.price%></span>
               </td>
-              <%c = 1%>
+              <%if Review.all.length == 0 %>
+                <td><span><%=link_to "Notez votre achat", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
+              <%end%>
+              <%arraylength = []%>
               <%Review.all.each do |current_review|%>
                 <%if current_review.order_id == order.id && current_review.item_id == item.id && current_review.user_id == current_user.id%>
-                  <td><span><%=link_to "Changer votre review", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
-                <%elsif c == Review.all.length && current_review.order_id != order.id && current_review.user_id != current_user.id && current_review.item_id != item.id%>
+                  <%arraylength.push(1)%>
+                <%end%>
+                <%if arraylength.length == 1 %>
                   <td><span><%=link_to "Notez votre achat", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
                 <%end%>
-                <%c += 1%>
               <%end%>
             </tr>
           <%end%>
