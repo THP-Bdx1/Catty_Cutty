@@ -1,0 +1,42 @@
+<div>
+    <h2><%= current_user.nickname %> votre review de l'item: </h2>
+    <br>
+    <h3><%= Item.find(params["itemid"]).title %> </h3>
+    <img src= <%= Item.find(params["itemid"]).image_url %> >
+    <br>
+
+    <%= form_for(@review, url: superpost_path, method: :post) do |f| %>
+    
+        <div class="field mt-1", id="hidden_field_image">
+            <%= f.label :order_id %><br />
+            <%= f.text_area :order_id, autofocus: true, value: params["orderid"] %>
+        </div>
+
+        <div class="field mt-1", id="hidden_field_image">
+            <%= f.label :user_id %><br />
+            <%= f.text_area :user_id, autofocus: true, value: current_user.id %>
+        </div>
+
+
+        <div class="field mt-1", id="hidden_field_image">
+            <%= f.label :item_id %><br />
+            <%= f.text_area :item_id, autofocus: true, value: params["itemid"] %>
+        </div>
+
+        <br>
+        <div class="field mt-1">
+                <%= f.label "Laissez votre impression sur cet item" %><br />
+                <%= f.text_area :content, autofocus: true, autocomplete: "Votre review" %>
+        </div>
+
+        <div class="field mt-1">
+                <%= f.label "Notez le produit entre 1 et 10" %><br />
+                <%= f.number_field :star, autofocus: true %>
+        </div>
+        
+        <div class="actions  mt-2">
+            <%= f.submit "Review" %>
+        </div>
+
+    <% end %>
+</div>

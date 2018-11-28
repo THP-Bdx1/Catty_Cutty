@@ -1352,8 +1352,9 @@ img {
 /* :: 8.0 Footer Area CSS */
 
 .footer_area {
-    position        : relative;
+    position        : fixed;
     bottom : 0px;
+    left: 0px;
     right : 0px;
     z-index         : 1;
     background-color: #252525;

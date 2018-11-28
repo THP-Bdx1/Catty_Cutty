@@ -79,3 +79,14 @@
                         <% end %>
                     </form>
                     <% end %>
+
+
+
+<div class="review">
+    <%Review.all.each do |review| %>
+        <%if params["id"].to_i == review.item_id %>
+            <p> <%=review.user.nickname%> a écrit à propos de ce produit : </p>
+            <p> <%=review.content%> - note: <%=review.star%>/10</p>
+        <%end%>
+    <%end%>
+</div>
