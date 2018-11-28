@@ -11,7 +11,7 @@
         <li>
             <%= image_tag current_user.profile_picture, class: "mb-2", style: "border-radius: 50%; height: 100px; width: 100px;" %>
 <% else %>
-<img src="/img/cat-avatar.jpg" alt="edit" style= "border-radius: 50%; height: 100px; width: 100px;" />
+<img src="/img/cat-avatar.jpg" alt="edit" style= "margin: 5px 5px; border-radius: 50%; height: 100px; width: 100px;" />
         </li>
         <% end %>
             <li>Bonjour, <%=current_user.nickname%> !</li>
@@ -31,14 +31,14 @@
     <nav class="amado-nav">
         <ul>
             <li class="active"><a href="/">Accueil</a></li>
-            <li><a href="/cart">Panier</a></li>
-            <li><a href="checkout.html">Order</a></li>
+            <!-- <li><a href="/cart">Panier</a></li>
+            <li><a href="checkout.html">Order</a></li> -->
         </ul>
     </nav>
 
     <!-- Cart Menu -->
     <div class="cart-fav-search mb-100">
-        <a href="/cart" class="cart-nav"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span><% if user_signed_in? %><% if current_user.cart == nil%>(0)<%else%>(<%=current_user.cart.items.length%>)<%end%><%else%>(0)<%end%></span></a>
+        <a href="/cart" class="cart-nav"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mon panier <span><% if user_signed_in? %><% if current_user.cart == nil%>(0)<%else%>(<%=current_user.cart.items.length%>)<%end%><%else%>(0)<%end%></span></a>
         <% if user_signed_in? %>
         <a href="/favoris" class="fav-nav"><i class="fa fa-heart" aria-hidden="true"></i> Favoris</a>
         <% end %>
