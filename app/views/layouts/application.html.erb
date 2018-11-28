@@ -18,11 +18,6 @@
     <%=render "layouts/modalinscription"%>
     <%= render "layouts/search-wrapper" %>
     <br>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>">
-        <%= message %>
-      </div>
-    <% end %>
     <div class="main-content-wrapper d-flex clearfix alignons">
       <%= render "layouts/mobile-nav" %>
       <%= render "layouts/header" %>
