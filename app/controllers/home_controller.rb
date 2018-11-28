@@ -11,6 +11,7 @@ class HomeController < ApplicationController
   def show
       @item=Item.find(params[:id])
       @favorites=Favorite.all
+      puts params
       @favorite=Favorite.find_by(user_id: current_user.id, item_id: params[:id])
   end
 
@@ -122,8 +123,7 @@ class HomeController < ApplicationController
   end
 
   def favoris
-    @favoris=Favorite.all
-    puts "L'item c'est ça MAGGLE #{params[:item_id]}"
+    @favoris=current_user.favorites
     @items=Item.all
   end
 
