@@ -34,23 +34,5 @@ $(document).ready(function () {
       }
     });
 
-    $(".modal-review").click(function(){
-
-      $(".modal3").addClass("visible");
-      console.log("Visible");
-    });
-    
-    $(".js-close-modal3").click(function(){
-      $(".modal3").removeClass("visible");
-          console.log("Invisible");
-    });
-
-    $(document).click(function (event) {
-      //if you click on anything except the modal itself or the "open modal" link, close the modal
-      if (!$(event.target).closest(".modal3,.modal-review").length) {
-        $("body").find(".modal3").removeClass("visible");
-      }
-    });
-
   });
 });
