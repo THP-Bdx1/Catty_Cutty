@@ -19,3 +19,10 @@
 .alignons .alignonsnous {
         align-items: flex-end;
 }
+
+.cropped_favorites img {
+        background-position-y: 50%;
+        background-position-x: 50%;
+        height: 250px;
+        width: auto;
+}

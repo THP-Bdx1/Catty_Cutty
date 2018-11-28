@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :items, only: [:new, :create, :edit, :update, :index, :destroy]
+
 root "home#index"
 get "/cart", to: "home#cart"
 get "/profile", to: "home#profile"
@@ -10,8 +10,11 @@ post "/addtocart", to: "home#addtocart"
 post "/profilepost", to: "home#profilepost"
 post "/checkout", to: "home#checkout"
 get "/favoris", to: "home#favoris"
+post "/superpost", to: "home#superpost"
+get 'fav', to: "home#fav"
+get 'unfav', to: "home#unfav"
+  resources :items, only: [:new, :create, :edit, :update, :index, :destroy]
   devise_for :users
 resources :charges
-post "/superpost", to: "home#superpost"
-  get 'fav', to: "home#fav"
+
 end
