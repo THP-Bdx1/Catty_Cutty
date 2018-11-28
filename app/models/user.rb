@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :orders
   has_many :reviews
   has_one_attached :profile_picture
+  has_many :items, through: :favorites
+  has_many :favorites
 end

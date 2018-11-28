@@ -112,4 +112,14 @@ class HomeController < ApplicationController
     @review = Review.new
   end
 
+  def fav
+      @user = User.find(params[:user_id])
+      @item=Item.find(params[:item_id])
+      @favorite=Favorite.new
+      @favorite.save
+      respond_to do |format|
+        format.html
+        format.js
+      end
+  end
 end

@@ -13,4 +13,5 @@ get "/favoris", to: "home#favoris"
   devise_for :users
 resources :charges
 post "/superpost", to: "home#superpost"
+  get 'fav', to: "home#fav"
 end
