@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   def show
       @item=Item.find(params[:id])
       @favorites=Favorite.all
-      @favorite=Favorite.find_by(user_id: params[:user_id], item_id: params[:item_id])
+      @favorite=Favorite.find_by(user_id: current_user.id, item_id: params[:id])
   end
 
   def addtocart
@@ -104,6 +104,7 @@ class HomeController < ApplicationController
     end
   end
 
+
   def profilepost
     @order_id = params[:order_id]
     @item_id = params[:item_id]
@@ -117,11 +118,24 @@ class HomeController < ApplicationController
   def fav
       @user = User.find(params[:user_id])
       @item=Item.find(params[:item_id])
+      puts "ça fav"
       respond_to do |format|
         format.html
-        format.js
+        format.js {render :layout => false}
       end
     @favorite=Favorite.create!(user_id: current_user.id, item_id: params[:item_id])
+  end
+
+    def unfav
+      @user = User.find(params[:user_id])
+      @item=Item.find(params[:item_id])
+      puts "ça défav"
+      respond_to do |format|
+        format.html
+        format.js {render :layout => false}
+      end
+    @favorite=Favorite.find_by(user_id: current_user.id, item_id: params[:item_id])
+    @favorite.destroy
   end
 
   def favoris

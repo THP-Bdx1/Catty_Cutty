@@ -1,0 +1,3 @@
+<%= link_to unfav_path(user_id: current_user.id, item_id: @item.id), remote: true do %>
+<i class="fa fa-heart favred" aria-hidden="true"></i>
+<% end %>
