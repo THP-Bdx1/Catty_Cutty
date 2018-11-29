@@ -6,7 +6,7 @@ ruby '2.5.1'
 #Dotenv
 gem 'dotenv-rails', groups: [:development, :test]
 #Mailjet
-gem 'mailjet'
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 #Gem Devise to handle user informations and sessions
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

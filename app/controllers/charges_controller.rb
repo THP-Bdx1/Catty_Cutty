@@ -9,8 +9,8 @@ class ChargesController < ApplicationController
       @order.items << item
     end
     current_user.cart.items.clear
-
-    UserMailer.mail_commande(@order, current_user.email).deliver_later
+    puts "ENVOI DE MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIIIIIIIIIL"
+    UserMailer.mail_commande(@order, current_user.email).deliver_now!
     
     # Amount in cents
     @amount = 500

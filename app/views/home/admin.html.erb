@@ -54,6 +54,7 @@ Vous pouvez apercevoir en dessous une liste d'options disponibles afin de vous a
                 <td>Pseudo</td>
                 <td>Email</td>
                 <td>Order Price</td>
+                <td>Order ID</td>
             </tr>
         </thead>
         <tbody>
@@ -67,6 +68,7 @@ Vous pouvez apercevoir en dessous une liste d'options disponibles afin de vous a
                 <%end%>
 
                 <td><%=order_price.inject(0){|sum,x| sum + x }%></td>
+                <td><%=order.id%></td>
 
             </tr>
         <%end%>
