@@ -9,18 +9,18 @@ $(document).ready(function () {
     });
     document.addEventListener("turbolinks:load", function () {
         
-        $(".cart-nav").click(function () {
+        $(".cart-nav").hover(function () {
             $('.fa-shopping-cart').toggleClass('animated wobble');
             });
 
-            $(".fav-nav").click(function () {
+            $(".fav-nav").hover(function () {
             $('.fa-heart').toggleClass('animated swing');
             });
-            $(".amado-nav .active a").click(function () {
+            $(".amado-nav .active a").hover(function () {
                 $(this).toggleClass('animated bounceOut');
             });
 
-             $(".show .amado-btn").click(function () {
+             $(".show .amado-btn").hover(function () {
                  $(this).toggleClass('animated hinge');
              });
 
@@ -28,6 +28,9 @@ $(document).ready(function () {
                  function () {$(this).toggleClass('animated bounce');}
             ); 
 
+            $(".amado-btn").hover(
+                function () {$(this).toggleClass('animated bounceIn');}
+                         );
             $(".fa-arrow-right").hover(
                 function () {$(this).toggleClass('animated slideOutRight');}
                          );
