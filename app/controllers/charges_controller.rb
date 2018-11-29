@@ -10,8 +10,8 @@ class ChargesController < ApplicationController
     end
     current_user.cart.items.clear
     @current_email = current_user.email
-    UserMailer.mail_commande(@current_email, @order).deliver_now!
-    UserMailer.mail_commande_admin(@current_email, @order).deliver_now!
+    UserMailer.mail_commande(@current_email, @order).deliver_later
+    UserMailer.mail_commande_admin(@current_email, @order).deliver_later
 
     # Amount in cents
     @amount = 500

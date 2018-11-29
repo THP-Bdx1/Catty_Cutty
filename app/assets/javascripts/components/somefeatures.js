@@ -1,4 +1,12 @@
 $(document).ready(function () {
+
+    $(document).on("turbolinks:click", function () {
+        $("#load_screen").show();
+    });
+
+    $(document).on("turbolinks:load", function () {
+        $("#load_screen").fadeOut();
+    });
     document.addEventListener("turbolinks:load", function () {
         
         $(".cart-nav").click(function () {
@@ -20,5 +28,13 @@ $(document).ready(function () {
                  function () {$(this).toggleClass('animated bounce');}
             ); 
 
+            $(".fa-arrow-right").hover(
+                function () {$(this).toggleClass('animated slideOutRight');}
+                         );
+            $(".fa-arrow-left").hover(
+                function () {
+                    $(this).toggleClass('animated slideOutLeft');
+                }
+            );
             });
 });
