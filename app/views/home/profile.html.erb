@@ -25,9 +25,7 @@
               <td class="price">
                 <span>$<%=item.price%></span>
               </td>
-              <%if Review.all.length == 0 %>
-                <td><span><%=link_to "Notez votre achat", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
-              <%end%>
+
               <%arraylength = []%>
               <%Review.all.each do |current_review|%>
                 <%if current_review.order_id == order.id && current_review.item_id == item.id && current_review.user_id == current_user.id%>
@@ -35,7 +33,7 @@
                 <%end%>
               <%end%>
                 <%if arraylength.length == 0 %>
-                  <td><span><%=link_to "Notez votre achat", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
+                  <td><span><%=link_to "Notez votre a'chat' (héhé)", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
                 <%end%>
             </tr>
           <%end%>
