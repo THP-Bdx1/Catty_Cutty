@@ -1,8 +1,8 @@
 /* [Master Stylesheet v-1.0.0] */
 /* :: :: 1.0 Import Fonts */
-@import url(../assets/stylesheets/amado/css/jquery-ui.min.css);
-@import url(../assets/stylesheets/amado/css/owl.carousel.css);
-@import url(../assets/stylesheets/amado/css/animate.css);
+@import url(../../../../assets/stylesheets/amado/css/jquery-ui.min.css);
+@import url(../../../../assets/stylesheets/amado/css/owl.carousel.css);
+@import url(../../../../assets/stylesheets/amado/css/animate.css);
 @import url(../css/magnific-popup.css);
 @import url(../css/nice-select.css);
 @import url(../css/font-awesome.min.css);
