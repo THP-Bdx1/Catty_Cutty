@@ -2,24 +2,24 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <div class="cart-title mt-50">
-                    <h1>Mon panier</h1>
+                <div class="cart-title">
+                    <h1 class="mon-panier">Mon panier</h1>
                 </div>
                     <div class="cart-table cart-div clearfix">
                         <table class="table table-responsive cart-tableau">
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Remove from cart</th>
+                                    <th>Nom</th>
+                                    <th>Prix</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <%current_user.cart.items.each do |item|%>
                                 <tr>
                                     <td class="cart_product_img">
-                                        <a href="/product/<%=item.id%>"><img src="<%=item.image_url%>" alt="product image"></a>
+                                        <a href="/product/<%=item.id%>"><img src="<%=item.image_url%>" style="height: 80px; width: 120px;" alt="product image"></a>
                                         </td>
                                     <td class="cart_product_desc">
                                         <h5><%=item.title%></h5>
@@ -31,7 +31,7 @@
                                         <form class="cart clearfix" action="/addtocart" method="post">
                                             <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
                                             <input type="hidden" value="<%=item.id%>" name="id"/>
-                                            <button name="remove" type="submit" class="btn amado-btn">Remove from cart</button>
+                                            <i class="fa fa-trash favred fa-2x"><button name="remove" type="submit"></button></i>
                                         </form>
                                     </td>
                                 </tr>
@@ -39,39 +39,54 @@
                             </tbody>
                         </table>
                     </div>
-                <div class="col-lg-4 offset-4">
-                    <div class="cart-summary">
-                        <h5>Total :</h5>
-                        <ul class="summary-table">
-                            <li><span>items:</span> <span><%=@cartlength%></span></li>
-                            <li><span>subtotal:</span> <span>$<%=@cartprice%></span></li>
-                            <li><span>delivery:</span> <span>$0</span></li>
-                            <li><span>total:</span> <span>$<%=@cartprice%></span></li>
-                        </ul>
-                        <div class="cart-btn">
-                            <div class="m-1">
-                                <%= form_tag charges_path do %>
-                                    <article>
-                                        <% if flash[:error].present? %>
-                                            <div id="error_explanation">
-                                                <p><%= flash[:error] %></p>
-                                            </div>
-                                        <% end %>
-                                    </article>
-                                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                                        data-description="Achat de <%=@cartlength%> photo de chats"
-                                        data-amount="<%=@cartprice * 100%>"
-                                        data-locale="auto"
-                                        data-currency="eur">
-                                    </script>
-                                <% end %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <%= link_to "Test", checkout_path, method: :post %>
     </div>
+</div>
+
+<div class="col-lg-12">
+  <h5>Résumé :</h5>
+</div>
+
+<div class="row">
+  <div class="col-lg-3">
+    <span>Nombre de produits :</span> <span class="text-dark"><b><%=@cartlength%></b></span>
+  </div>
+  <div class="col-lg-3">
+    <span>Coût combiné :</span> <span class="text-dark"><b>$<%=@cartprice%></b></span>
+  </div>
+  <div class="col-lg-3">
+    <span>Frais de port :</span> <span class="text-success"><b>$0</b></span>
+  </div>
+  <div class="col-lg-3">
+    <span>Coût total :</span> <span class="text-info"><b>$<%=@cartprice%></b></span>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-9">
+  </div>
+  <div class="col-lg-3">
+    <div class="cart-btn">
+        <div class="m-1">
+            <%= form_tag charges_path do %>
+                <article>
+                    <% if flash[:error].present? %>
+                        <div id="error_explanation">
+                            <p><%= flash[:error] %></p>
+                        </div>
+                    <% end %>
+                </article>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Achat de <%=@cartlength%> photo de chats"
+                    data-amount="<%=@cartprice * 100%>"
+                    data-locale="auto"
+                    data-currency="eur">
+                </script>
+            <% end %>
+        </div>
+    </div>
+  </div>
 </div>

@@ -698,6 +698,7 @@ img {
         }
     }
     .cart-table-area {
+        margin-top: -150px;
         position: relative;
         z-index : 1;
         @include flex(0 0 calc(95% - 320px));
