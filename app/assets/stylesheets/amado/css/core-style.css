@@ -1008,7 +1008,7 @@ img {
     opacity   : 1;
     visibility: visible; }
   .single-products-catagory:hover .hover-content p,
-  .single-products-catagory:hover .hover-content h4, .single-products-catagory: focus .hover-content p,
+  .single-products-catagory:hover .hover-content h4, .single-products-catagory:focus .hover-content p,
   .single-products-catagory:focus .hover-content h4 {
     color: #fff; }
 
