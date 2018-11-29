@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @items=Item.order('created_at DESC')
+    @categories=Category.all
     if user_signed_in?
       if current_user.cart == nil
         Cart.create!(user_id: current_user.id)
@@ -157,5 +158,36 @@ class HomeController < ApplicationController
     end
     end
   end
+
+  def category_display
+    if params[:id] != nil
+      @category=Category.find(params[:id])
+      @items=Item.where(category_id: params[:id])
+       respond_to do |format|
+        format.html
+        format.js {render :layout => false}
+      end
+    else
+          @items=Item.order('created_at DESC')
+    if user_signed_in?
+      if current_user.cart == nil
+        Cart.create!(user_id: current_user.id)
+      end
+    end
+    end
+  end
+
+  def category_display_all
+    @items=Item.order('created_at DESC')
+      if user_signed_in?
+        if current_user.cart == nil
+          Cart.create!(user_id: current_user.id)
+        end
+      end
+      respond_to do |format|
+        format.html
+        format.js {render :layout => false}
+      end
+    end
 
 end

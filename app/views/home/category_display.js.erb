@@ -1,0 +1,9 @@
+$(".tab-cat").css({
+"background-color": "white",
+"color": "white"});
+$('.single-products-catagory').fadeOut();
+$(".tab-cat.tabn<%= @category.id %>").css({
+"background-color": "rgb(238,174,202)",
+"color": "white"});
+$('#iciman').html('<%= j render "home/index"%>').fadeIn();
+

@@ -14,6 +14,8 @@ post "/superpost", to: "home#superpost"
 get 'fav', to: "home#fav"
 get 'unfav', to: "home#unfav"
 get '/category', to: "home#category"
+get '/category_display', to: "home#category_display"
+get '/category_display_all', to: "home#category_display_all"
   resources :items, only: [:new, :create, :edit, :update, :index, :destroy]
   devise_for :users
 resources :charges
