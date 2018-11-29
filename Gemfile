@@ -74,6 +74,7 @@ gem 'jquery-ui-rails'
 gem 'faker'
 gem 'wow-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'rolify', :git => 'git://github.com/EppO/rolify.git'
 
 
 

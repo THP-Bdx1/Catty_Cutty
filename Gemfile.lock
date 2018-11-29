@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/EppO/rolify.git
+  revision: 285c5afc38adc9a37594f523b5e748ea37766562
+  specs:
+    rolify (5.1.0)
+
+GIT
   remote: https://github.com/mailjet/mailjet-gem.git
   revision: c125c5c829ab9449293b0092141fbbdafdc0f09b
   specs:
@@ -285,6 +291,7 @@ DEPENDENCIES
   popper_js
   puma (~> 3.11)
   rails (~> 5.2.1)
+  rolify!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

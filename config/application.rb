@@ -16,7 +16,6 @@ module CuttyCat
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.action_mailer.delivery_method = :mailjet
-    config.assets.initialize_on_precompile = false
   end
 end
 
