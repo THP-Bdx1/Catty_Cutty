@@ -1,4 +1,12 @@
 $(document).ready(function () {
+
+    $(document).on("turbolinks:click", function () {
+        $("#load_screen").show();
+    });
+
+    $(document).on("turbolinks:load", function () {
+        $("#load_screen").hide();
+    });
     document.addEventListener("turbolinks:load", function () {
         
         $(".cart-nav").click(function () {
