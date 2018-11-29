@@ -31,7 +31,7 @@
                                         <form class="cart clearfix" action="/addtocart" method="post">
                                             <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
                                             <input type="hidden" value="<%=item.id%>" name="id"/>
-                                            <i class="fa fa-trash favred fa-2x"><button name="remove" type="submit"></button></i>
+                                            <button name="remove" type="submit"><i class="fa fa-trash favred fa-2x"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -72,9 +72,9 @@
         <div class="m-1">
             <%= form_tag charges_path do %>
                 <article>
-                    <% if flash[:error].present? %>
+                    <% if flash[:danger].present? %>
                         <div id="error_explanation">
-                            <p><%= flash[:error] %></p>
+                            <p><%= flash[:danger] %></p>
                         </div>
                     <% end %>
                 </article>
