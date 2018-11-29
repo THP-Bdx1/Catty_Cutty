@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
 
     $(document).on("turbolinks:load", function () {
-        $("#load_screen").hide();
+        $("#load_screen").fadeOut();
     });
     document.addEventListener("turbolinks:load", function () {
         
