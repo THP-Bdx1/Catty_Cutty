@@ -1,6 +1,6 @@
 /* [Master Stylesheet v-1.0.0] */
 /* :: :: 1.0 Import Fonts */
-@import url(../css/jquery-ui.min.css);
+@import "jquery-ui.min";
 @import url(../css/owl.carousel.css);
 @import url(../css/animate.css);
 @import url(../css/magnific-popup.css);
