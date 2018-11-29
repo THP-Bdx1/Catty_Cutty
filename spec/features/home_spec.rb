@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Homes", type: :feature do
 context 'view page' do
-    scenario 'should be successful' do
+    scenario 'should be logged' do
     visit '/'
       click_button "Connexion"
       within('.modal2 form') do
@@ -10,8 +10,6 @@ context 'view page' do
       fill_in 'Password', with: '123456'
       end
       click_button "Log in"
-      
-      click_button "Add to card"
     end
 
     scenario 'class nav exist' do
@@ -23,5 +21,18 @@ context 'view page' do
       find('.fa-instagram')
     end
 end
+
+    scenario 'should add to cart' do
+    visit '/'
+      click_button "Connexion"
+      within('.modal2 form') do
+      fill_in 'Email', with: 'thpbordeaux@gmail.com'
+      fill_in 'Password', with: '123456'
+      end
+      click_button "Log in"
+      visit '/'
+      find("#iciman .single-products-catagory:nth-child(1)")
+    end
+
 
 end
