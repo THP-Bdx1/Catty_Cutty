@@ -389,7 +389,10 @@ img {
     padding         : 0 7px;
     font-size       : 18px;
     line-height     : 56px;
-    background-color: $bg-default;
+    border-radius   : 8px;
+    
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(199,148,233,1) 81%); 
     font-weight     : 400;
     &.active,
     &:hover,
@@ -398,6 +401,9 @@ img {
         color           : $white-color;
         background-color: $dark-color;
     }
+}
+.amado-btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* :: 4.0 Search Wrapper Area CSS */
@@ -692,6 +698,7 @@ img {
         }
     }
     .cart-table-area {
+        margin-top: -150px;
         position: relative;
         z-index : 1;
         @include flex(0 0 calc(95% - 320px));

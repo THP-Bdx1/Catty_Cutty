@@ -47,9 +47,10 @@ class HomeController < ApplicationController
     current_user.cart.items.each do |item|
       @order.items << item
     end
+    puts "LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     current_user.cart.items.clear
-    UserMailer.mail_commande(@order, current_user.email).deliver_later
-    redirect_to "/profile"
+    @current_email = current_user.email
+    UserMailer.mail_commande(@current_email, @order).deliver_later
   end
 
   def profile
