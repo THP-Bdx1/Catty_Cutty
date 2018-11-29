@@ -30,8 +30,12 @@ image_arr = [
 
 i=0
 
+3.times do
+  catagories = Category.create!(name: Faker::Artist.name)
+end
+
 20.times do
-  item = Item.create!(title: Faker::Job.title, description: Faker::StarWars.quote, price: Random.rand(1..20)-0.01, image_url: image_arr[i])
+  item = Item.create!(title: Faker::Job.title, description: Faker::StarWars.quote, price: Random.rand(1..20)-0.01, image_url: image_arr[i], category_id: Random.rand(1..3))
   i+=1
 end
 

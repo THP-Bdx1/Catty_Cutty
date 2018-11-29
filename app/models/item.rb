@@ -8,4 +8,5 @@ class Item < ApplicationRecord
     has_many :reviews
     has_many :users, through: :favorites
     has_many :favorites
+    belongs_to :category
 end

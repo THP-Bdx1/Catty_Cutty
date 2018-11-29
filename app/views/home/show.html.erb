@@ -58,7 +58,9 @@
                                 <a href="#">Write A Review</a>
                             </div>
                         <div class="review">
+                        <% if current_user != nil %>
                             <%= render "home/favorites" %>
+                            <% end %>
                         </div>
                         </div>
                         <!-- Avaiable -->

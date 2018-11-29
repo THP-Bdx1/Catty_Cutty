@@ -11,8 +11,9 @@ class HomeController < ApplicationController
   def show
       @item=Item.find(params[:id])
       @favorites=Favorite.all
-      puts params
-      @favorite=Favorite.find_by(user_id: current_user.id, item_id: params[:id])
+      if current_user != nil
+        @favorite=Favorite.find_by(user_id: current_user.id, item_id: params[:id])
+      end
   end
 
   def addtocart
