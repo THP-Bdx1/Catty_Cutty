@@ -190,8 +190,8 @@ img {
   z-index            : 2;
   background-position: center center;
   background-size    : cover; }
-  .bg-overlay      : hover,
-  .bg-overlay-white: hover {
+  .bg-overlay      :hover,
+  .bg-overlay-white:hover {
     position: absolute;
     z-index : -1;
     top     : 0;
@@ -1007,8 +1007,8 @@ img {
   .single-products-catagory:hover a::after, .single-products-catagory:focus a::after {
     opacity   : 1;
     visibility: visible; }
-  .single-products-catagory: hover .hover-content p,
-  .single-products-catagory: hover .hover-content h4, .single-products-catagory: focus .hover-content p,
+  .single-products-catagory:hover .hover-content p,
+  .single-products-catagory:hover .hover-content h4, .single-products-catagory: focus .hover-content p,
   .single-products-catagory: focus .hover-content h4 {
     color: #fff; }
 
