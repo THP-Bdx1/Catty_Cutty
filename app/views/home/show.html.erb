@@ -51,21 +51,25 @@
                         </a>
                         <!-- Ratings & Review -->
                         <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
-                            <div class="ratings">
-                                <i class="fa fa-star yellow" aria-hidden="true"></i>
-                                <i class="fa fa-star yellow" aria-hidden="true"></i>
-                                <i class="fa fa-star yellow" aria-hidden="true"></i>
-                                <i class="fa fa-star yellow" aria-hidden="true"></i>
-                                <i class="fa fa-star yellow" aria-hidden="true"></i>
+                            <div class="notation">
+                                <%note_totale = []%>
+                                <%Review.all.each do |review| %>
+                                    <%if params["id"].to_i == review.item_id %>
+                                        <%note_totale.push(review.star)%>
+                                    <%end%>
+                                <%end%>
+                                <%if note_totale.length == 0%>
+                                    <p>Il n'y a pas encore de note pour ce pôtichat</p>
+                                <%else%>
+                                    <%total = (note_totale.inject(0){|sum,x| sum + x })%>
+                                    <span>Note des utilisateurs : <%=total/note_totale.length%>/10</span>
+                                <%end%>
                             </div>
                             <div class="review">
-                                <a href="#">Write A Review</a>
+                            <% if current_user != nil %>
+                                <%= render "home/favorites" %>
+                                <% end %>
                             </div>
-                        <div class="review">
-                        <% if current_user != nil %>
-                            <%= render "home/favorites" %>
-                            <% end %>
-                        </div>
                         </div>
                         <!-- Avaiable -->
                         <p class="avaibility"><i class="fa fa-circle"></i> En Stock</p>
@@ -94,18 +98,14 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-
-                    <div class="review">
-                        <%Review.all.each do |review| %>
-                            <%if params["id"].to_i == review.item_id %>
-                                <p> <%=review.user.nickname%> a écrit à propos de ce produit : </p>
-                                <p> <%=review.content%> - note: <%=review.star%>/10</p>
-                            <%end%>
-                        <%end%>
-                    </div>
-        </div>
+        <div class="review">
+            <%Review.all.each do |review| %>
+                <%if params["id"].to_i == review.item_id %>
+                    <b> <%=review.user.nickname%> a écrit à propos de ce produit : </b>
+                    <p> <%=review.content%> - note: <%=review.star%>/10</p>
+                <%end%>
+            <br>
+            <%end%>
+        </div>                   
     </div>
 </div>
