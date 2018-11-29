@@ -1,6 +1,6 @@
 <div class="col-lg-12 profile-page">
   <h2 class="mt-4 title-amatic">MES COMMANDES</h2>
-
+  <div class="row">
     <%current_user.orders.each do |order|%>
       <table class="table table-responsive">
         <thead>
@@ -25,9 +25,6 @@
               <td class="price">
                 <span>$<%=item.price%></span>
               </td>
-              <%if Review.all.length == 0 %>
-                <td><span><%=link_to "Notez votre achat", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
-              <%end%>
               <%arraylength = []%>
               <%Review.all.each do |current_review|%>
                 <%if current_review.order_id == order.id && current_review.item_id == item.id && current_review.user_id == current_user.id%>
@@ -42,5 +39,5 @@
         </tbody>
       </table>
     <%end%>
-
   </div>
+</div>

@@ -61,12 +61,18 @@ A compléter !
 ## REMERCIEMENTS
 
 ![THP-BDX1](http://image.noelshack.com/fichiers/2018/48/4/1543504354-thpbdx1.png)
+
+
 Toute l'équipe de THP et l'équipe soudée de Bordeaux
 
 ![coffee](http://image.noelshack.com/fichiers/2018/48/4/1543504475-nescaf-200-g.jpg)
 ![monster](http://image.noelshack.com/fichiers/2018/48/4/1543504519-3717996-1.jpg)
 ![orangina](http://image.noelshack.com/fichiers/2018/48/4/1543504628-orangina-sparkling-citrus-beverage-case-330-ml.jpg)
- Ce à quoi nous avons carburé pour le projet ( et la raison de notre mort prochaine à 30 ans )
+
+
+Ce à quoi nous avons carburé pour le projet ( et la raison de notre mort prochaine à 30 ans )
 
 ![nazicat](http://image.noelshack.com/fichiers/2018/48/4/1543504345-nazicat.gif)
- Le chat nazi sans qui rien de tout cela n'aurait été possible.
+
+
+Le chat nazi sans qui rien de tout cela n'aurait été possible.
