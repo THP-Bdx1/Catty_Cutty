@@ -1,12 +1,14 @@
-.cart-div {
-  min-width: 100vh;
-}
-
-.cart-tableau {
-  min-height: 50px;
-  max-height: 250px;
+.mon-panier {
+    font-family: 'Shadows Into Light', cursive;
+    color: #ff00db;
 };
 
-.cart-remove {
-  min-width: 150px;
+@media screen and (min-width:480px) {
+  .cart-div {
+    min-width: 100vh;
+  };
+  .cart-tableau {
+    min-height: 50px;
+    max-height: 250px;
+  }
 }

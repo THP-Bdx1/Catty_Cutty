@@ -1,13 +1,13 @@
 <div class="col-lg-12 profile-page">
-  <h2 class="mt-4">MY ORDERS</h2>
+  <h2 class="mt-4 title-amatic">MES COMMANDES</h2>
 
     <%current_user.orders.each do |order|%>
       <table class="table table-responsive">
         <thead>
           <tr>
-            <h3>
+            <h4>
               <%= order.created_at %>
-            </h3>
+            </h4>
             <th></th>
             <th>Name</th>
             <th>Price</th>
