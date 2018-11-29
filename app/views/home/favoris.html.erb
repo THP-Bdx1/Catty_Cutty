@@ -1,7 +1,9 @@
 <div class="col-lg-12">
   <div class="clearfix d-flex flex-row flex-wrap">
+        <% if @favoris.length == 0 %>
+        <h2>Tu n'as pas encore d'images favoris !<br>N'hésites pas à retourner sur la <a href="/" class="btn btn-danger"><h2>page d'accueil</h2></a> pour en ajouter ;)</h2>
+            <% else %>
       <% @favoris.each do |favor| %>
-          <% if current_user.id == favor.user_id %>
                   <% @items.each do |item| %>
                       <% if favor.item_id == item.id %>
                           <div class="single-products-catagory clearfix">

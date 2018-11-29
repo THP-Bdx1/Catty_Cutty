@@ -73,8 +73,9 @@
 
                     <!-- Add to Cart Form -->
                     <% if user_signed_in? %>
-                    <form class="cart clearfix" action="/addtocart" method="post">
+                    <form class="cart clearfix show" action="/addtocart" method="post">
                         <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token" />
+                        <input type="hidden" value="<%= @item.id %>" name="id" />
                         <% if current_user.cart.items.include?(@item)%>
                         <button name="remove" type="submit" class="btn amado-btn">Remove from cart</button>
                         <% else %>

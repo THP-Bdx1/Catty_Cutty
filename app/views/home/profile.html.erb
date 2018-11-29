@@ -33,10 +33,10 @@
                 <%if current_review.order_id == order.id && current_review.item_id == item.id && current_review.user_id == current_user.id%>
                   <%arraylength.push(1)%>
                 <%end%>
-                <%if arraylength.length == 1 %>
+              <%end%>
+                <%if arraylength.length == 0 %>
                   <td><span><%=link_to "Notez votre achat", profilepost_path(order_id: order.id, item_id: item.id), method: :post%><span></td>
                 <%end%>
-              <%end%>
             </tr>
           <%end%>
         </tbody>
