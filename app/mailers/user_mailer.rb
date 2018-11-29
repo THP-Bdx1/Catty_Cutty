@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
 
     def mail_commande_admin (usermail, userorder)
         @admin_order = userorder
-        @usermail=usermail
+        @usermail = usermail
         @users = User.all
         @users.each do |user|
             if user.admin == true

@@ -51,6 +51,7 @@ class HomeController < ApplicationController
     current_user.cart.items.clear
     @current_email = current_user.email
     UserMailer.mail_commande(@current_email, @order).deliver_later
+    UserMailer.mail_commande_admin(@current_email, @order).deliver_later
   end
 
   def profile
