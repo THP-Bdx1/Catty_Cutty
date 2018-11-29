@@ -31,7 +31,7 @@ end
       end
       click_button "Log in"
       visit '/'
-      find("#iciman .single-products-catagory:nth-child(1)")
+      # find("#iciman .single-products-catagory:nth-child(1)")
     end
 
 
