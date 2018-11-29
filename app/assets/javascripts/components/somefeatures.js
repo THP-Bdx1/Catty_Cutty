@@ -2,18 +2,23 @@ $(document).ready(function () {
     document.addEventListener("turbolinks:load", function () {
         
         $(".cart-nav").click(function () {
-            $('.fa-shopping-cart').addClass('animated wobble');
+            $('.fa-shopping-cart').toggleClass('animated wobble');
             });
 
             $(".fav-nav").click(function () {
-            $('.fa-heart').addClass('animated swing');
+            $('.fa-heart').toggleClass('animated swing');
             });
             $(".amado-nav .active a").click(function () {
-                $('.amado-nav .active a').addClass('animated bounceOut');
+                $(this).toggleClass('animated bounceOut');
             });
 
              $(".show .amado-btn").click(function () {
-                 $('.show .amado-btn').addClass('animated hinge');
+                 $(this).toggleClass('animated hinge');
              });
+
+             $(".social-info a i").hover(
+                 function () {$(this).toggleClass('animated bounce');}
+            ); 
+
             });
 });
