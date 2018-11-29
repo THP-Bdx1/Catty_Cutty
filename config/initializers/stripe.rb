@@ -1,4 +1,3 @@
-require 'dotenv'
 
 Rails.configuration.stripe = {
   :publishable_key => Rails.application.credentials.dig(:PUBLISHABLE_KEY),
