@@ -11,6 +11,7 @@ class HomeController < ApplicationController
   def show
       @item=Item.find(params[:id])
       @favorites=Favorite.all
+      @category=Category.find(@item.category_id)
       if current_user != nil
         @favorite=Favorite.find_by(user_id: current_user.id, item_id: params[:id])
       end
@@ -140,6 +141,20 @@ class HomeController < ApplicationController
   def favoris
     @favoris=current_user.favorites
     @items=Item.all
+  end
+
+  def category
+    if params[:id] != nil
+      @category=Category.find(params[:id])
+      @items=Item.where(category_id: params[:id])
+    else
+          @items=Item.order('created_at DESC')
+    if user_signed_in?
+      if current_user.cart == nil
+        Cart.create!(user_id: current_user.id)
+      end
+    end
+    end
   end
 
 end

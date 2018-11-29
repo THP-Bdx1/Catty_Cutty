@@ -5,8 +5,12 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mt-50">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Products</a></li>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item">
+    <%=link_to category_path(id: @item.category_id) do %>
+<%= @category.name %>
+<% end %>
+                        </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             <%= @item.title %>
                         </li>
@@ -48,11 +52,11 @@
                         <!-- Ratings & Review -->
                         <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
                             <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star yellow" aria-hidden="true"></i>
+                                <i class="fa fa-star yellow" aria-hidden="true"></i>
+                                <i class="fa fa-star yellow" aria-hidden="true"></i>
+                                <i class="fa fa-star yellow" aria-hidden="true"></i>
+                                <i class="fa fa-star yellow" aria-hidden="true"></i>
                             </div>
                             <div class="review">
                                 <a href="#">Write A Review</a>

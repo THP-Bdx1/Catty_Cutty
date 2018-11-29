@@ -20,5 +20,13 @@ $(document).ready(function () {
                  function () {$(this).toggleClass('animated bounce');}
             ); 
 
+            $(".fa-arrow-right").hover(
+                function () {$(this).toggleClass('animated slideOutRight');}
+                         );
+            $(".fa-arrow-left").hover(
+                function () {
+                    $(this).toggleClass('animated slideOutLeft');
+                }
+            );
             });
 });

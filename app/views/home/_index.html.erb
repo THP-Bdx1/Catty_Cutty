@@ -1,0 +1,54 @@
+<!-- Search Wrapper Area Start -->
+
+<!-- Search Wrapper Area End -->
+
+<!-- ##### Main Content Wrapper Start ##### -->
+
+<!-- Header Area Start -->
+<!-- Render des forms d'inscription modals -->
+
+<!-- Header Area End -->
+
+<!-- Product Catagories Area Start -->
+<div class="col-lg-12">
+
+    <!-- <div class="products-catagories-area clearfix alignonsnous bg-info"> -->
+    <div class="clearfix d-flex flex-row flex-wrap">
+        <%@items.each do |item|%>
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="/product/<%=item.id%>">
+                <div class="cropped">
+                    <% if item.catimage.attachment != nil %>
+                    <%= image_tag item.catimage %>
+                    <% else %>
+                    <img src="<%=item.image_url%>" alt="product image">
+                    <% end %>
+                </div>
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From
+                        <%=item.price%>$</p>
+                    <h4>
+                        <%=item.title%>
+                    </h4>
+                </div>
+            </a>
+            <% if user_signed_in? %>
+            <form class="cart clearfix pt-1 float-right" action="/addtocart" method="post">
+                <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token" />
+                <input type="hidden" value="<%=item.id%>" name="id" />
+                <% if current_user.cart == nil%>
+                <button name="add" type="submit" class="btn amado-btn">Add to card</button>
+                <% elsif current_user.cart.items.include?(item)%>
+                <button name="remove" type="submit" class="btn amado-btn">Remove from cart</button>
+                <% else %>
+                <button name="add" type="submit" class="btn amado-btn">Add to card</button>
+                <% end %>
+            </form>
+            <%end%>
+        </div>
+        <%end%>
+    </div>
+</div>
