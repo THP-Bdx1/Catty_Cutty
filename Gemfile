@@ -75,5 +75,5 @@ gem 'faker'
 gem 'wow-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-
-
+gem "aws-sdk-s3", require: false
+gem 'rails_12factor'
