@@ -1,7 +1,7 @@
 <h3>Ta vie doit être terriblement triste pour avoir acheté cette image de chaton</h3>
 
 <%compteur = 1%>
-<%@order.items.each do |item|%>
+<%@current_order.items.each do |item|%>
     <p> Item n°<%=compteur%> </p>
     <img src = "<%=item.image_url%>">
     <%compteur += 1%>

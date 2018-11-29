@@ -1,18 +1,18 @@
 class UserMailer < ApplicationMailer
 
-    def mail_commande (order, usermail)
-        @order = order
-        mail(to: usermail, subject: "Merci d'avoir acheté cette image de chaton")
+    def mail_commande (email, order)
+        @current_order = order
+        mail(to: email, subject: "Merci d'avoir acheté cette image")
     end
 
 
-    def mail_commande_admin (order, usermail)
-        @order = order
-        @usermail = usermail
+    def mail_commande_admin (usermail, userorder)
+        @admin_order = userorder
+        @usermail=usermail
         @users = User.all
         @users.each do |user|
             if user.admin == true
-                mail(to: user, subject: "On a fait une vente!")
+                mail(to: user.email, subject: "On a fait une vente!")
             end
         end
     end
