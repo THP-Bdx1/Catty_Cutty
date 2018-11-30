@@ -13,7 +13,11 @@ Attention, ce site est mignon.
 
 ## VERSION EN PRODUCTION
 
-Vous pouvez retrouver une version en production du site [en cliquant ici](test://test.test.test)
+Vous pouvez retrouver une version en production du site [en cliquant ici](https://a-chat-online.herokuapp.com/)
+EDIT tardif : pour la version en production, tu peux tester l'user-administrateur avec les logins suivant :
+- Email : thpbordeaux@gmail.com
+- Password : 123456
+On ne critiquera pas l'originalité du password, merci.
 
 ---
 
@@ -72,7 +76,3 @@ Toute l'équipe de THP et l'équipe soudée de Bordeaux
 
 Ce à quoi nous avons carburé pour le projet ( et la raison de notre mort prochaine à 30 ans )
 
-![nazicat](http://image.noelshack.com/fichiers/2018/48/4/1543504345-nazicat.gif)
-
-
-Le chat nazi sans qui rien de tout cela n'aurait été possible.
